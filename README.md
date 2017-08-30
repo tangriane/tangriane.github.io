@@ -10,3 +10,23 @@ Portifólio desenvolvido durante os estudos de mentoria do projeto [training-cen
 
 
 
+Dependencias: 
+
+#otimizar imagens 
+npm install gulp-changed --save-dev
+npm install gulp-imagemin --save-dev
+
+#compilar o Sass
+npm install --save-dev gulp-sass
+
+#babel
+npm install --save-dev gulp-babel babel-preset-env
+
+#minificação js
+
+npm install --save-dev gulp-minify
+
+#brosersync
+
+npm install browser-sync gulp --save-dev
+
