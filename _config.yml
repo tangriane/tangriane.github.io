@@ -2,7 +2,7 @@
 title: My Port 
 email: tangrianekolisnichenco@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-Bem vindo ao site de teste
+Bem vindo f ao site de teste
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "tangriane.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: tangriane_k
