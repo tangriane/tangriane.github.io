@@ -46,12 +46,12 @@ header img{
 	color: #e1276d!important;
 }
 .backHome{
-	background-color: #727c8b;
+	
 	position: relative;
 	padding:10%;
 	display: flex;
     justify-content: space-around;
-
+     z-index: 10;
 }
 .backHome h1{
 	color: #fff;
@@ -74,6 +74,68 @@ header img{
 	flex-direction: column;
 	width: 49%;
 }
+
+canvas {
+     width: 100%;
+    position: absolute;
+    z-index: 9;
+
+}
+/**SOBRE MIM**/
+#sobre-mim{
+	display: flex;
+    justify-content: center;
+}
+.sobre{
+	width: 73%;
+    background-color: #333b50;
+    top: 91%;
+    z-index: 11;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 67%;
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+}
+.sobre img {
+	width: 100px;
+    height: 100px;
+    margin-bottom: 22%;
+    margin-top: 40%;
+}
+.sobre p{
+	line-height: 1.8em;
+}
+.sobre button{
+    border: 1px solid #e0006d;
+    background-color: transparent;
+    color: #fff;
+    padding: 2%;
+    margin-top: 7%;
+}
+/**PROFESSIONAL**/
+.backProf{
+	background: url(../img/proficional.jpg) no-repeat fixed;
+    background-size: cover;
+    padding: 50%;
+
+}
+.backProf {&:before {
+	    content: '';
+    position: absolute;
+    top: 109%;
+    right: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
+    opacity: .6;
+    z-index: 9;
+    padding: 48%;
+}
+}
+
+
 /**EXPERIENCE**/
 .backExp{
 
