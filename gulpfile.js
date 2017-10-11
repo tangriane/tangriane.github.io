@@ -38,11 +38,6 @@ gulp.task('browser-sync', ['jekyll-build'], function() {
 
 /*TERMINA O SERVIDOR COM O JEKYLL E O BROWSER */
 
-
-
-
-
-
 gulp.task('sass', function() {
     gulp.src('src/scss/**/*.scss')
         .pipe(sass().on('error', sass.logError))
@@ -53,7 +48,7 @@ gulp.task('sass', function() {
             extname: '.min.css'
         }))
         .pipe(gulp.dest('assets/css'))
-        .pipe(browserSync.reload({stream:true}))
+        .pipe(browserSync())
     .pipe(notify({ message: 'Styles task complete' }));
 });
 
@@ -85,10 +80,6 @@ gulp.task('clean', function() {
 
 
 
-
-
-
-
 /*IMAGEM
 gulp.task('copy', ['clean'], function() {
     return gulp.src('src/**//*')
@@ -109,6 +100,24 @@ gulp.task('build-img', function() {
 
 /*IMAGEM*/
 
+gulp.task('copy', ['clean'], function() {
+    return gulp.src('src/img/*')
+        .pipe(gulp.dest('assets/img'));
+});
+
+gulp.task('clean', function() {
+    return gulp.src('assets/img/*')
+        .pipe(clean());
+});
+
+gulp.task('build-img', function() {
+
+  return gulp.src('assets/img/*')
+    .pipe(imagemin())
+    .pipe(gulp.dest('assets/img'));
+});
+
+
 
 /* COMEÇO ASSISTA OS ARQUIVOS  ALTERAÇÕES*/
 gulp.task('watch', function() {
@@ -123,5 +132,5 @@ gulp.task('watch', function() {
 
 
 gulp.task('default', function() {
-    gulp.start('sass', 'js', 'browser-sync', 'watch'/*, 'build-img'*/);
+    gulp.start('sass', 'js', 'copy', 'build-img',  'watch', 'browser-sync');
 });
