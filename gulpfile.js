@@ -14,30 +14,6 @@ concat     = require('gulp-concat'),
 uglify     = require('gulp-uglify'),
 jekyll     = require ('gulp-jekyll');
 
-/*COMEÇA O SERVIDOR COM O JEKYLL E O BROWSER */
-gulp.task('jekyll-build', function (done) {
-    browserSync.notify('Building Jekyll');
-    return cp.spawn('jekyll', ['build'], {stdio: 'inherit'})
-        .on('close', done);
-});
-
-
-gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
-    browserSync.reload();
-});
-
-
-gulp.task('browser-sync', ['jekyll-build'], function() {
-    browserSync({
-        server: {
-            baseDir: '_site'
-        },
-        host: "localhost"
-    });
-});
-
-/*TERMINA O SERVIDOR COM O JEKYLL E O BROWSER */
-
 gulp.task('sass', function() {
     gulp.src('src/scss/**/*.scss')
         .pipe(sass().on('error', sass.logError))
@@ -48,7 +24,7 @@ gulp.task('sass', function() {
             extname: '.min.css'
         }))
         .pipe(gulp.dest('assets/css'))
-        .pipe(browserSync())
+    .pipe(browserSync.reload({stream:true}))
     .pipe(notify({ message: 'Styles task complete' }));
 });
 
@@ -126,9 +102,35 @@ gulp.task('watch', function() {
   // Watch .js files
   gulp.watch('src/js/**/*.js', ['js']);
   // Watch .html files and posts
-  gulp.watch(['index.html', '_includes/*.html', '_layouts/*.html', '*.md', '_posts/*'], ['jekyll-rebuild']);
+  gulp.watch(['assets/css/*.min.css', 'index.html', '_includes/*.html', '_layouts/*.html', '*.md', '_posts/*'], ['jekyll-rebuild']);
 });
 /*FINAL ASSISTA OS ARQUIVOS ALTERAÇÕES*/
+
+
+
+/*COMEÇA O SERVIDOR COM O JEKYLL E O BROWSER */
+gulp.task('jekyll-build', function (done) {
+    browserSync.notify('Building Jekyll');
+    return cp.spawn('jekyll', ['build'], {stdio: 'inherit'})
+        .on('close', done);
+});
+
+
+gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
+    browserSync.reload();
+});
+
+
+gulp.task('browser-sync', ['jekyll-build'], function() {
+    browserSync({
+        server: {
+            baseDir: '_site'
+        },
+        host: "localhost"
+    });
+});
+
+/*TERMINA O SERVIDOR COM O JEKYLL E O BROWSER */
 
 
 gulp.task('default', function() {
