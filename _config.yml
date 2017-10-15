@@ -10,8 +10,10 @@ github_username:  tangriane
 # Build settings
 markdown: kramdown
 
-permalink: /:title
-
+collections:
+   pages:
+     output: true
+     permalink: /:path/
 
 
 # Exclude from processing.

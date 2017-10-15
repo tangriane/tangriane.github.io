@@ -1,0 +1,20 @@
+---
+layout: page
+title: Blog
+description: Publicações abordando assuntos do cotidiano e do front-end em geral
+---
+
+{% if site.posts.size == 0 %}
+  <h3 class="homeBlog__noPost">No posts found :(</h3>	
+{% else %}
+  {% for post in site.posts %}
+
+  <a class="homeBlog__post__link" href="{{ post.url }}">
+    <h3 class="homeBlog__post">{{ post.title }}</h3>
+    <div class="homeBlog__post__postDate">
+      <time>{{ post.date | date_to_string }}</time>
+    </div>
+  </a>
+
+  {% endfor %}
+{% endif %}

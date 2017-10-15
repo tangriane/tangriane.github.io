@@ -185,7 +185,7 @@ canvas {
 .backProf{
 	background: url(/assets/img/proficional.jpg) no-repeat fixed;
     background-size: cover;
-    padding: 47%;
+    height: 191vh;
 
 }
 .backProf {&:before {
@@ -197,7 +197,7 @@ canvas {
     background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
     opacity: .6;
     z-index: 9;
-    padding: 42%;
+    height: 172vh;
 }
 }
 .prof{
@@ -397,8 +397,7 @@ canvas {
     justify-content: center;
     font-family: 'Lato', sans-serif;
     background-color: #333b50;
-    padding-top: 12%;
-    padding-bottom: 13%;
+    height: 100vh;
 }
 #portfolio{
 
@@ -454,9 +453,9 @@ canvas {
 /**EXPERIENCE**/
 
 .backExp{
-    background: url(../img/fundo.webp)  no-repeat;
+    background: url(../img/fundo.jpg)  no-repeat fixed;
     background-size: 100% 100%;
-    padding: 213% 0 0 0;
+    height: 119vh;
 
 }
 .backExp {&:before {
@@ -465,10 +464,11 @@ canvas {
     top: 381%;
     right: 0;
     left: 0;
-    background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
-    opacity: .6;
+    background-image: linear-gradient(to bottom right,rgba(0, 0, 0, 0.93),#ab0606);
+    opacity: 0.7;
+    
     z-index: 9;
-    padding-bottom: 100%;
+    height: 119vh;
 }
 }
 
@@ -512,37 +512,75 @@ canvas {
     padding-bottom: 5%;
 
 }
-
+/**barra de progresso**/
+.linha-barra {
+    width: 3px;
+    height: 8rem;
+    background:#aa1b47;
+    margin: 0 0 0 auto;
+    z-index: 1;
+  /*  position: absolute;*/
+    right: 18px;
+}
+.bola-barra{
+    width: 1rem;
+    height: 1rem;
+    border-radius: .5rem;
+    background-color: #aa1b47;
+    margin: 0 -6px 0 auto;
+    position: relative;
+    z-index: 2;
+}
+.timeline{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.posicao-barra{
+    position: absolute;
+    right: 27%;
+    width: 20%;
+}
+.paraiso{
+    top: 46%;
+    left: 28%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.prestige{
+   top: 72%;
+   right: 27%;
+}
+    
 
 /**CONTATO**/
 .backCon{
 background: url(../img/escr.jpg)  no-repeat fixed;
 background-size: cover;
-padding: 21%;
+height: 100vh;
 
 }
 .backCon {&:before {
 	content: '';
     position: absolute;
-    top: 422%;
     right: 0;
     left: 0;
     background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
     opacity: .6;
     z-index: 9;
-    padding: 21%;
+   height: 100vh;
 }
 }
   .conteudo{
-    position: absolute;
+    
     background-color: #333b50;
     height: 94%;
-    width: 73%;
-    top: 381%;
-    z-index: 10;
+    width: 100%;
     box-shadow: 0px 1px 25px 4px rgba(47,46,46,0.3);
   }
-  #contatct{
+  #contact{
   	width: 100%;
     height: 85%;
   }
@@ -551,18 +589,17 @@ padding: 21%;
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;    
+    flex-direction: column;  
     align-content: stretch;
  }
 
 .contato {
-       
+    text-align: center;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     display: flex;
 	font-family: 'Lato', sans-serif;
 	height: 60%;
-    margin-left: 4%;
     color: #fff;
 }
 .contato h1{
@@ -578,53 +615,21 @@ padding: 21%;
 	font-size: 0.85em;
 	text-decoration: none;
 	color: #BEC7D5;
+
 }
 .contato span{
 	font-size: 0.85em;
 	color: #BEC7D5;
+    padding-bottom: 4%;
 }
 
-.formulario{
-	display: flex;
-    margin-left: 12%;
-    margin-right: 9%;
-    flex-direction: column;
-}
-.formulario form{
-	display: flex;
-    flex-direction: column;
-   
-}
-.formulario input {
-	padding: 5%;
-   width: 89%;
-}
-.formulario textarea{
-	margin: 0px 0px 6.15625px;
-  	padding: 23%;
-}
-.input-assunto{
-	margin: 2% 0 2% 0;
-}
-.input{
-	display: flex;
 
-}
-.input1{
-	margin-right: 2%;
-}
-.formulario button{
-	border: none;
-    cursor: pointer;
-    background-color: rgba(0, 214, 70, 1);
-    color: #2D2D2D;
-    padding: 16px;
-}
 
 .icons{
 	display: flex;
 	align-items: center;
 	justify-content: center;
+        padding-bottom: 3%;
 
 }
 .icons a {
@@ -683,58 +688,6 @@ padding: 21%;
 	.copy{
 		margin-bottom: 1em;
 	}
+
 }
-
-
-
-
-section {
-  height: 30vh;
-  background-color: #333;
-}
-
-section:nth-child(odd) {
-  background-color: #222;
-}
-
-h1 {
-  text-align: center;
-  color: white;
-  text-transform: uppercase;
-}
-
-.fixed {
-  position: fixed;
-  width: 500px;
-  height: 150px;
-  margin-left: -250px;
-  margin-top: -87px;
-  top: 14%;
-  left: 65%;
-}
-
-.line {
-  position: absolute;
-  height: 0px;
-  width: 5px;
-  background-color: white;
-  left: 13px;
-}
-
-
-ul.teste{
-    font-size: 95px;
-    position: absolute;
-    left: 25px;
-        top: -144px;
-    color: white;
-}
-ul.teste li{
-      margin-bottom: 81px;
-}
-
-li.first {
-  border-left: 1px solid white;
-}
-
 
