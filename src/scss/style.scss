@@ -67,32 +67,29 @@ $font-full: 'Lato', sans-serif;
 	box-shadow: 0px 2px 10px #544747 inset;
 	align-items: center;
 	padding: 1% 0;
-    display: flex;
-    
-    width: 100%;
+  display: flex;
+  width: 100%;
 }
 .logo__header{
   width: 40px;
   height: 40px;
   align-items: center;
 }
-.logo__link{
-
+.logo__div{
+  flex-grow: 5;
+    text-align: center;
 }
 
 .nav__conteudo{
 
-	width: 60%;
-	align-items: center;
+	
+    flex-grow: 3;
+    align-items: center;
+    text-align: start;
 
 }
 
-.header__nav .nav_link{
 
- flex-basis: 40%;
-
-
-}
 
 .nav__link{
     
@@ -117,8 +114,8 @@ $font-full: 'Lato', sans-serif;
 	position: relative;
 	padding:10%;
 	display: flex;
-    justify-content: space-around;
-     z-index: 10;
+  justify-content: space-around;
+  z-index: 10;
 }
 .backHome h1{
 	color: #fff;
