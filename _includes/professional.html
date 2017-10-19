@@ -1,7 +1,30 @@
 <div class="prof">
 
  <section id="professinal">
-	<h1><span>#1</span> PROFESSIONAL</h1>
+	
+
+ 	<div class="avatar-container p-36">
+  <img src="https://s3.amazonaws.com/uifaces/faces/twitter/_shahedk/128.jpg" alt="" class="avatar"/>
+</div><!--.avatar-container-->
+
+
+ 	<div class="avatar-container p-36">
+  <img src="https://s3.amazonaws.com/uifaces/faces/twitter/_shahedk/128.jpg" alt="" class="avatar"/>
+</div><!--.avatar-container-->
+
+
+ 	<div class="avatar-container p-36">
+  <img src="https://s3.amazonaws.com/uifaces/faces/twitter/_shahedk/128.jpg" alt="" class="avatar"/>
+</div><!--.avatar-container-->
+
+
+
+
+
+
+
+
+	<!--<h1><span>#1</span> PROFESSIONAL</h1>
 	<h2>MY KNOWLEDGE LEVEL IN SOFTWARE</h2>
 
 
@@ -20,10 +43,27 @@
 	<p>PHP</p>
   		<div class="bar color3"><span></span></div>
   		<div class="label"><span></span></div>
-	</div>
+	</div>-->
 
  </section>
 
 </div>
 
 <div class="backProf"></div>
+<script type="text/javascript">
+	$('.avatar-container').on('click',function(){
+  
+  if ($(this).find('.info').length <= 0) {
+    $(this).append('<div class="info"><div class="info-inner"></div></div>');
+  }
+  
+  var $info = $(this).find('.info'),
+      $inner= $(this).find('.info-inner'),
+      $p    = $(this).attr("class").match(/p-\w+/).toString().substring(2);
+  
+  $inner.text($p+'%');
+  $info.toggleClass('js-active');
+});
+
+$('.avatar-container').last().trigger('click');
+</script>
