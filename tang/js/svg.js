@@ -19,8 +19,8 @@ const DOT_COUNT = 40,
 function Dot(){
   this.x = canvas.width * Math.random();
   this.y = canvas.height * Math.random();
-  this.xenergy = Math.random() * 4 + 1;
-  this.yenergy = Math.random() * 4 + 1;
+  this.xenergy = Math.random() * 5 + 1;
+  this.yenergy = Math.random() * 5 + 1;
   var that = this;
   this.draw = function() {
     that.x = that.x + Math.sin(clock / that.yenergy) * that.xenergy;
@@ -35,7 +35,7 @@ function Dot(){
   this.drawLineToDot = function(n) {
     var selectedDot = findNearestDot(that, n);
     ctx.beginPath();
-    ctx.strokeStyle = "rgba(" + (Math.round(Math.sin(clock) * 255)) + "," + (Math.round(Math.cos(clock) * 255)) + "," + Math.round(Math.cos(clock * .05) * 255) + ", .3)";
+   /* ctx.strokeStyle = "rgba(" + (Math.round(Math.sin(clock) * 255)) + "," + (Math.round(Math.cos(clock) * 255)) + "," + Math.round(Math.cos(clock * .05) * 255) + ", .3)";*/
     ctx.lineWidth = LINE_WIDTH;
     ctx.moveTo(that.x, that.y);
     ctx.lineTo(selectedDot.x, selectedDot.y);

@@ -56,6 +56,7 @@ table {
 $cor-nav: #8b95a3;
 $cor-detalhe: #e1276d;
 $font-full: 'Lato', sans-serif;
+$cor-padrao: #727c8b;
 
 
 
@@ -63,12 +64,13 @@ $font-full: 'Lato', sans-serif;
 
 /**HOME**/
 .header__nav{
-	background-color: #727c8b;
+	background-color: $cor-padrao;
 	box-shadow: 0px 2px 10px #544747 inset;
 	align-items: center;
 	padding: 1% 0;
   display: flex;
   width: 100%;
+  position: fixed;
 }
 .logo__header{
   width: 40px;
@@ -90,7 +92,6 @@ $font-full: 'Lato', sans-serif;
 }
 
 
-
 .nav__link{
     
      color: $cor-nav;
@@ -109,42 +110,95 @@ $font-full: 'Lato', sans-serif;
 }
 
 
-.backHome{
+.home__main{
 	
-	position: relative;
-	padding:10%;
-	display: flex;
-  justify-content: space-around;
-  z-index: 10;
+	/*position: relative;*/
+	/*padding:10%;*/
+     height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: $cor-padrao;
+    display: flex;
+ /* z-index: 10;*/
 }
-.backHome h1{
+.home__h1{
 	color: #fff;
     font-size: 6em;
 	font-weight: 900;
 	font-family: 'Lato', sans-serif;
 }
-.backHome h2{
+.home__h2{
 	color: #fff;
     font-size: 1.2em;
 	font-family: 'Lato', sans-serif;
 	line-height: 4.8em;
 
 }
-.backHome i{
-	color: #e1276d!important;
-}
-.main-conteudo{
+
+.home__conteudo{
 	display: flex;
 	flex-direction: column;
-	width: 74%;
+	width: 57%;
 }
 
-canvas {
+.none{
+  display: none;
+}
+
+/**HOME RESPONSIVO**/
+
+ @media only screen and (max-device-width:480px){
+ .home__h1{
+  font-size: 8em;
+ }
+
+ .home__conteudo{
+  width: 100%;
+  margin: 100px;
+ }
+ .logo__header{
+    width: 150px;
+    height: 150px;
+    align-items: center;
+    margin: 15px 0 15px;
+    }
+
+  .nav__conteudo{
+    display: none;
+  }
+  .none{
+     display: block;
+  }
+  .home__menu .fa {
+    font-size: 6em;
+    padding: 26px 32px 26px 32px;
+    color: #fff;
+    cursor: pointer;
+}
+.home__menu{
+    text-align: center;
+    margin-right: 63px;
+}
+.logo__div{
+    flex-grow: 1;
+    text-align: left;
+    margin-left: 82px;
+
+  }
+  .header__nav{
+    position: relative;
+  }
+}
+
+
+
+
+/*canvas {
      width: 100%;
     position: absolute;
     z-index: 9;
 
-}
+}*/
 /**SOBRE MIM**/
 #sobre-mim{
 	display: flex;
@@ -192,7 +246,7 @@ canvas {
 .backProf{
 	background: url(/assets/img/proficional.jpg) no-repeat fixed;
     background-size: cover;
-    height: 191vh;
+    height: 100vh;
 
 }
 .backProf {&:before {
@@ -204,7 +258,7 @@ canvas {
     background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
     opacity: .6;
     z-index: 9;
-    height: 172vh;
+    height: 100vh;
 }
 }
 .prof{
