@@ -1,85 +1,203 @@
-var canvas = document.getElementsByTagName("canvas")[0];
-var ctx = canvas.getContext("2d");
+var TRIANGLE_SIZE = 51;
+var OPACITY_VARIATION = 0.4;
+var colorHue = 1;
+var colorSaturation = 64;
+var colorValue = 22;
+var newCanvas, canvasEl, canvasData;
 
-var clock = 0;
+var downloadImage = function() {
+  downloadCanvas(canvasEl);
+};
 
-canvas.width = window.innerWidth * 2;
-canvas.height = window.innerHeight * 2;
-ctx.beginPath();
-ctx.rect(0,0, canvas.width, canvas.height);
-ctx.fillColor = "#000";
-ctx.fill();
-ctx.closePath();
-
-const DOT_COUNT = 40,
-      CONNECT_COUNT_PER_DOT = 4,
-      RADIUS = 6,
-      LINE_WIDTH = 1.5;
-
-function Dot(){
-  this.x = canvas.width * Math.random();
-  this.y = canvas.height * Math.random();
-  this.xenergy = Math.random() * 4 + 1;
-  this.yenergy = Math.random() * 4 + 1;
-  var that = this;
-  this.draw = function() {
-    that.x = that.x + Math.sin(clock / that.yenergy) * that.xenergy;
-    that.y = that.y + Math.sin(clock / that.xenergy) * that.yenergy;
-    ctx.beginPath();
-    ctx.fillStyle = "#FFF";
-    ctx.arc(that.x, that.y, RADIUS, 0, Math.PI * 2, false);
-    ctx.fill();
-    ctx.stroke();
-    ctx.closePath();
-  }
-  this.drawLineToDot = function(n) {
-    var selectedDot = findNearestDot(that, n);
-    ctx.beginPath();
-    ctx.strokeStyle = "rgba(" + (Math.round(Math.sin(clock) * 255)) + "," + (Math.round(Math.cos(clock) * 255)) + "," + Math.round(Math.cos(clock * .05) * 255) + ", .3)";
-    ctx.lineWidth = LINE_WIDTH;
-    ctx.moveTo(that.x, that.y);
-    ctx.lineTo(selectedDot.x, selectedDot.y);
-    ctx.stroke();
-    ctx.closePath();
-  }
-}
-
-var dots = [];
-
-for (var i = 0; i < DOT_COUNT; i++){
-  dots.push(new Dot());
-}
-
-function findNearestDot(fromDot, n){
-  var x = fromDot.x;
-  var y = fromDot.y;
-  var sortedDots = dots.sort(function(a, b){
-    return ((Math.abs(x - a.x) + Math.abs(y - a.y)) > (Math.abs(x - b.x) + Math.abs(y - b.y))) ? 1 : -1;
-  });
-  return sortedDots[n];
-}
-
-function draw(){
-  clock += .1;
-  ctx.beginPath();
-  ctx.fillStyle = "#727c8b";
-  ctx.rect(0, 0, canvas.width, canvas.height);
-  ctx.fill();
-  ctx.closePath();
-  dots.forEach(function(dot){ dot.draw(); });
-  dots.forEach(function(dot, i){
-    for (var i = 1; i < Math.min(dots.length - 1, CONNECT_COUNT_PER_DOT); i++){
-      dot.drawLineToDot(i);
+// Determine screen pixel ratio (Retina/Non-Retina)
+var backingScale = function() {
+  if ('devicePixelRatio' in window) {
+    if (window.devicePixelRatio > 1) {
+      return window.devicePixelRatio;
     }
-  });
+  }
+  return 1;
+};
+
+var scaleFactor = backingScale();
+
+/* UTIL FUNCTIONS */
+function HSVtoRGB(h, s, v) {
+  var r, g, b, i, f, p, q, t;
+  if (h && s === undefined && v === undefined) {
+    s = h.s, v = h.v, h = h.h;
+  }
+  i = Math.floor(h * 6);
+  f = h * 6 - i;
+  p = v * (1 - s);
+  q = v * (1 - f * s);
+  t = v * (1 - (1 - f) * s);
+  switch (i % 6) {
+    case 0:
+      r = v, g = t, b = p;
+      break;
+    case 1:
+      r = q, g = v, b = p;
+      break;
+    case 2:
+      r = p, g = v, b = t;
+      break;
+    case 3:
+      r = p, g = q, b = v;
+      break;
+    case 4:
+      r = t, g = p, b = v;
+      break;
+    case 5:
+      r = v, g = p, b = q;
+      break;
+  }
+
+  return "#" + ((1 << 24) + (Math.floor(r * 255) << 16) + (Math.floor(g * 255) << 8) + Math.floor(b * 255)).toString(16).slice(1);
 }
 
-window.onclick = function(e){
-  var d = new Dot();
-  d.x = e.clientX * 2;
-  d.y = e.clientY * 2;
-  dots.push(d);
-  draw();
+function heightOf(side) {
+  return strip((((Math.sqrt(3)) / 2) * side));
 }
 
-setInterval(draw, 30);
+function randomOpacity() {
+  return (Math.random() * OPACITY_VARIATION);
+}
+
+function half(value) {
+  return strip(value / 2);
+}
+
+function layCanvas(canvas) {
+  var canvasContext = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  if (scaleFactor > 1) {
+    canvas.width = canvas.width * scaleFactor;
+    canvas.height = canvas.height * scaleFactor;
+    canvasContext = canvas.getContext("2d");
+  }
+
+  return [canvas, canvasContext];
+}
+
+function strip(number) {
+  return (parseFloat(number.toPrecision(12)));
+}
+
+function downloadCanvas(canvas) {
+  window.open(canvas.toDataURL('image/jpeg'), '_blank');
+}
+
+/* END OF UTIL FUNCTIONS */
+
+var triangleCanvas = (function() {
+  "use strict";
+
+  function triangleCanvas(canvasElm, side) {
+    var canvasObject = layCanvas(canvasElm);
+    this.canvas = canvasObject[0];
+    this.canvasContext = canvasObject[1];
+    this.side = side * scaleFactor;
+    this.height = heightOf(this.side);
+    this.canvasWidth = this.canvas.width;
+    this.canvasHeight = this.canvas.height;
+    this.clear();
+    this.draw();
+  }
+
+  triangleCanvas.prototype.clear = function() {
+    this.canvasContext.clearRect(0, 0, this.canvasWidth, this.canvasHeight);
+  };
+
+  triangleCanvas.prototype.draw = function() {
+    var totalDrawnWidth = 0;
+    while (totalDrawnWidth < this.canvasWidth) {
+      totalDrawnWidth = totalDrawnWidth + this.height;
+      this.drawColumn(totalDrawnWidth, -half(this.side));
+      totalDrawnWidth = totalDrawnWidth + this.height;
+      this.drawColumn(totalDrawnWidth, -this.side);
+    }
+  };
+
+  triangleCanvas.prototype.drawColumn = function(startX, startY) {
+    var columnHeight = startY;
+    while (columnHeight < this.canvasHeight) {
+      columnHeight = columnHeight + half(this.side);
+      this.triangle(startX, columnHeight, "right");
+      columnHeight = columnHeight + half(this.side);
+      this.triangle(startX, columnHeight, "left");
+    }
+  };
+
+  triangleCanvas.prototype.triangle = function(currentX, currentY, direction) {
+    var color = "rgba(0,0,0," + randomOpacity() + ")";
+    var horizontal, startPoint;
+    this.canvasContext.fillStyle = color;
+    var moveToX, moveToY;
+    switch (direction) {
+      case "left":
+        horizontal = -this.height;
+        startPoint = currentX - this.height;
+        break;
+      case "right":
+        horizontal = this.height;
+        startPoint = currentX;
+        break;
+    }
+    this.canvasContext.beginPath();
+    this.canvasContext.moveTo(startPoint, currentY);
+    moveToY = currentY + half(this.side);
+    moveToX = startPoint - horizontal;
+    this.canvasContext.lineTo(moveToX, moveToY);
+    moveToY = moveToY - this.side;
+    this.canvasContext.lineTo(moveToX, moveToY);
+    this.canvasContext.closePath();
+    this.canvasContext.fill();
+    this.canvasContext.save();
+  };
+
+  return triangleCanvas;
+})();
+
+function regenerateTriangles() {
+  newCanvas = new triangleCanvas(canvasEl, TRIANGLE_SIZE);
+  canvasData = newCanvas.canvasContext.getImageData(0, 0, newCanvas.canvasWidth, newCanvas.canvasHeight);
+  colorize();
+}
+
+function colorize() {
+  var currentCanvas = newCanvas;
+  var ctx = currentCanvas.canvasContext;
+  var w = currentCanvas.canvasWidth;
+  var h = currentCanvas.canvasHeight;
+  var compositeOperation = ctx.globalCompositeOperation;
+
+  ctx.clearRect(0, 0, w, h);
+
+  //get the current ImageData for the canvas.
+  ctx.putImageData(canvasData, 0, 0);
+
+  //set to draw behind current content
+  ctx.globalCompositeOperation = "destination-over";
+
+  //set background color
+  ctx.fillStyle = HSVtoRGB(colorHue / 100, colorSaturation / 100, colorValue / 100);
+  ctx.fillRect(0, 0, w, h);
+
+  //reset the globalCompositeOperation to what it was
+  ctx.globalCompositeOperation = compositeOperation;
+}
+
+window.onload = function() {
+  canvasEl = document.getElementsByClassName("trianglecanvas")[0];
+  var gui = new dat.GUI();
+
+
+  
+
+  // Kick off
+  regenerateTriangles();
+
+};

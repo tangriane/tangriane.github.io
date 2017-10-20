@@ -1,4 +1,4 @@
-<header class="header__nav">
+<header class="header__nav header__teste">
 
 
 	
@@ -22,3 +22,17 @@
 	</span></a>
 	
 </header>
+
+
+<script type="text/javascript">
+
+$(document).on("scroll",function(){
+    if($(document).scrollTop()>700){ //QUANDO O SCROLL PASSAR DOS 100px DO TOPO
+    	  $("header").removeClass("header__teste").addClass("header__nav"); //VOLTA P MENU GRANDE ORIGINAL
+      
+    } else{
+        $("header").removeClass("header__nav ").addClass("header__teste"); //TROCA P CLASSE MENOR
+    }
+});
+</script>
+
