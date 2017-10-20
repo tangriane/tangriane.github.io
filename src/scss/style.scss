@@ -57,10 +57,7 @@ $cor-nav: #8b95a3;
 $cor-detalhe: #e1276d;
 $font-full: 'Lato', sans-serif;
 $cor-padrao: #727c8b;
-
-
-
-
+$branco: #fff;
 
 /**HOME**/
 .header__nav{
@@ -200,59 +197,56 @@ $cor-padrao: #727c8b;
 
 }*/
 /**SOBRE MIM**/
-#sobre-mim{
-	display: flex;
+#sobre__section{
+	  display: flex;
     justify-content: center;
-}
-.sobre{
-	width: 73%;
-    background-color: #333b50;
-    top: 91%;
+    width: 100%;
+    top: 100%;
     z-index: 11;
     position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 67%;
-    color: #fff;
-    font-family: 'Lato', sans-serif;
+    height: 100%;
+    color: $branco;
+    font-family: $font-full;
 }
-.sobre img {
+
+.sobre__logo{
 	width: 100px;
-    height: 100px;
-    margin-bottom: 22%;
-    margin-top: 40%;
+  height: 100px;
+  margin-bottom: 19%;
+  margin-top: 30%;
 }
-.sobre p{
+.sobre__p{
 	line-height: 1.8em;
 }
-.sobre button{
+.sobre__button{
     border: 1px solid #e0006d;
     background-color: transparent;
     color: #fff;
     padding: 2%;
     margin-top: 7%;
- transition: 0.2s ease 0.1s;
+    transition: 0.2s ease 0.1s;
 
 }
-.sobre button:hover {
+.sobre__button:hover {
     border: 1px solid  #e0006d;
     background-color:  #e0006d;
-    color: #333b50;
+    color: $cor-detalhe;
 
 }
 
-/**PROFESSIONAL**/
-.backProf{
+.sobre__back{
 	background: url(/assets/img/proficional.jpg) no-repeat fixed;
     background-size: cover;
     height: 100vh;
 
 }
-.backProf {&:before {
+.sobre__back {&:before {
 	content: '';
     position: absolute;
-    top: 109%;
+    top: 100%;
     right: 0;
     left: 0;
     background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
@@ -261,11 +255,138 @@ $cor-padrao: #727c8b;
     height: 100vh;
 }
 }
+
+.sobre__h1{
+  line-height: 1.8em;
+  font-size: 3em;
+  font-weight: 700;
+}
+.sobre__span{
+  color:  rgba(233, 30, 99, 0.64);
+}
+
+
+
+
+
+
+
+
+
+$color-back: #efefef;
+$color-bar: #0BF;
+
+
+.avatar-container{
+  position: relative;
+  display: inline-block;
+  border-radius: 50%;
+  overflow: hidden;
+  height: 130px;
+  width: 130px;
+  padding: 0;
+  margin: 0 1rem;
+  border: none;
+  background: $color-back;
+  cursor: pointer;
+
+  .avatar{
+    display: block;
+    margin: 15px;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    z-index: 100;
+
+    i{
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .info{
+    display: none;
+    font-weight: bold;
+    font-size: 2rem;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+    background: rgba($color-bar,.2);
+    color: white;
+    z-index: 1000;
+    
+    &.js-active{
+      display: table;
+    }
+
+    .info-inner{
+      display: table-cell;
+      text-align: center;
+      vertical-align: middle;
+    }
+  }
+}
+
+/**
+* Function to generate procentual progress classes 
+* .p-1 1% -> p-100 100%
+**/
+$step: 1;
+$loops: round(100 / $step);
+$increment: 360 / $loops;
+$half: round($loops / 2);
+
+@for $i from 1 through $loops {
+
+  .p-#{$i*$step} {
+
+    @if $i < $half {
+      $nextdeg: 90deg +  ( $increment * $i ) ;
+
+      background-image: linear-gradient(90deg, $color-back 50%, transparent 50%, transparent), linear-gradient($nextdeg, $color-bar 50%, $color-back 50%, $color-back);
+
+    } @else {
+      $nextdeg: -90deg + ( $increment * ( $i - $half ) );
+
+      background-image: linear-gradient($nextdeg, $color-bar 50%, transparent 50%, transparent), linear-gradient(270deg, $color-bar 50%, $color-back 50%, $color-back);
+
+    }    
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 .prof{
 	position: absolute;
     top: 180%;
     display: flex;
-    /* justify-content: center; */
+    
 	color: #fff;
 	z-index: 11; 
 	align-content: center;
@@ -293,7 +414,7 @@ $cor-padrao: #727c8b;
 	line-height: 1.5em;
 	font-size: 1em;
 
-}
+}*/
 
 /*********BARRA DE PROGRESSO **********/
 
@@ -753,97 +874,6 @@ height: 100vh;
 }
 
 
-
-
-
-
-
-
-
-$color-back: #efefef;
-$color-bar: #0BF;
-
-
-.avatar-container{
-  position: relative;
-  display: inline-block;
-  border-radius: 50%;
-  overflow: hidden;
-  height: 130px;
-  width: 130px;
-  padding: 0;
-  margin: 0 1rem;
-  border: none;
-  background: $color-back;
-  cursor: pointer;
-
-  .avatar{
-    display: block;
-    margin: 15px;
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    overflow: hidden;
-    z-index: 100;
-
-    img{
-      width: 100%;
-      height: auto;
-    }
-  }
-
-  .info{
-    display: none;
-    font-weight: bold;
-    font-size: 2rem;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0; bottom: 0;
-    left: 0; right: 0;
-    background: rgba($color-bar,.2);
-    color: white;
-    z-index: 1000;
-    
-    &.js-active{
-      display: table;
-    }
-
-    .info-inner{
-      display: table-cell;
-      text-align: center;
-      vertical-align: middle;
-    }
-  }
-}
-
-/**
-* Function to generate procentual progress classes 
-* .p-1 1% -> p-100 100%
-**/
-$step: 1;
-$loops: round(100 / $step);
-$increment: 360 / $loops;
-$half: round($loops / 2);
-
-@for $i from 1 through $loops {
-
-  .p-#{$i*$step} {
-
-    @if $i < $half {
-      $nextdeg: 90deg +  ( $increment * $i ) ;
-
-      background-image: linear-gradient(90deg, $color-back 50%, transparent 50%, transparent), linear-gradient($nextdeg, $color-bar 50%, $color-back 50%, $color-back);
-
-    } @else {
-      $nextdeg: -90deg + ( $increment * ( $i - $half ) );
-
-      background-image: linear-gradient($nextdeg, $color-bar 50%, transparent 50%, transparent), linear-gradient(270deg, $color-bar 50%, $color-back 50%, $color-back);
-
-    }    
-  }
-
-}
 
 
 
