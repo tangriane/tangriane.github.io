@@ -1,8 +1,8 @@
-var TRIANGLE_SIZE = 51;
-var OPACITY_VARIATION = 0.4;
-var colorHue = 1;
-var colorSaturation = 64;
-var colorValue = 22;
+var TRIANGLE_SIZE = 36;
+var OPACITY_VARIATION = 0.1;
+var colorHue = 100;
+var colorSaturation = 1;
+var colorValue = 40;
 var newCanvas, canvasEl, canvasData;
 
 var downloadImage = function() {

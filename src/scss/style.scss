@@ -56,7 +56,7 @@ table {
 $cor-nav: #8b95a3;
 $cor-detalhe: #e1276d;
 $font-full: 'Lato', sans-serif;
-$cor-padrao: #727c8b;
+$cor-padrao: #333b50;
 $branco: #fff;
 
 /**HOME**/
@@ -69,6 +69,7 @@ $branco: #fff;
   width: 100%;
   z-index: 9999;
   position: fixed;
+ 
 }
 .header__teste{
    /* background-color: $cor-padrao;*/
@@ -79,7 +80,7 @@ $branco: #fff;
   width: 100%;
   z-index: 9999;
   position: fixed;
-  
+
 }
 .logo__header{
   width: 40px;
