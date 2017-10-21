@@ -150,7 +150,9 @@ $branco: #fff;
 	flex-direction: column;
 	width: 57%;
 }
-
+.home__span{
+  color: $cor-detalhe;
+}
 .none{
   display: none;
 }
@@ -259,7 +261,7 @@ $branco: #fff;
 .sobre__back {&:before {
 	content: '';
     position: absolute;
-    top: 100%;
+    
     right: 0;
     left: 0;
     background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
@@ -270,9 +272,12 @@ $branco: #fff;
 }
 
 .sobre__h1{
-  line-height: 1.8em;
+
   font-size: 3em;
   font-weight: 700;
+      line-height: 3em;
+   
+    padding-bottom: 30px;
 }
 .sobre__span{
   color:  rgba(233, 30, 99, 0.64);
@@ -287,7 +292,7 @@ $branco: #fff;
 
 
 $color-back: #efefef;
-$color-bar: #0BF;
+$color-bar: #e91e63;
 
 
 .avatar-container{
@@ -295,8 +300,8 @@ $color-bar: #0BF;
   display: inline-block;
   border-radius: 50%;
   overflow: hidden;
-  height: 130px;
-  width: 130px;
+  height: 120px;
+  width: 120px;
   padding: 0;
   margin: 0 1rem;
   border: none;
@@ -305,16 +310,17 @@ $color-bar: #0BF;
 
   .avatar{
     display: block;
-    margin: 15px;
+    margin: 10px;
     border-radius: 50%;
     width: 100px;
     height: 100px;
     overflow: hidden;
     z-index: 100;
-
-    i{
+    background-color: #fff;
+     img{
       width: 100%;
       height: auto;
+          
     }
   }
 
@@ -584,7 +590,14 @@ $half: round($loops / 2);
   
 .port{
     
+   
+}
+#portfolio__section{
+
     display: flex;
+    flex-direction: column;
+    align-items: center;
+     display: flex;
     /* justify-content: center; */
     color: #fff;
     align-content: center;
@@ -593,25 +606,19 @@ $half: round($loops / 2);
     font-family: 'Lato', sans-serif;
     background-color: #333b50;
     height: 100vh;
-}
-#portfolio{
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 
 
 }
-.port h1{
+.portfolio__h1{
     line-height: 1.8em;
     font-size: 3em;
     font-weight: 700;
 
 }
-.port span{
+.portfolio__span{
     color:  rgba(233, 30, 99, 0.64);
 }
-.port h2 {
+.portfolio__h2{
     line-height: 4em;
     font-size: 1em;
     padding-bottom: 5%;
@@ -624,22 +631,22 @@ $half: round($loops / 2);
     margin-left: 12px;
 
 }
-.work img {
+.portfolio__project img {
     width: 256px;
     height: 256px;
     margin: 0px;
     opacity: 1.0; 
 }
-.work img:hover{
+.portfolio__project img:hover{
     opacity: 0.6; 
     transition: opacity 0.5s;
 }
-.work a {
+.portfolio__project a {
    
     margin: 0px;
 }
 
-.work{
+.portfolio__project{
      box-shadow: 1px 3px 32px 8px rgb(32, 37, 51);
 }
 
@@ -650,39 +657,33 @@ $half: round($loops / 2);
 .backExp{
     background: url(../img/fundo.jpg)  no-repeat fixed;
     background-size: 100% 100%;
-    height: 119vh;
+    height: 100vh;
 
 }
 .backExp {&:before {
     content: '';
     position: absolute;
-    top: 381%;
+   /* top: 381%;*/
     right: 0;
     left: 0;
     background-image: linear-gradient(to bottom right,rgba(0, 0, 0, 0.93),#ab0606);
     opacity: 0.7;
     
     z-index: 9;
-    height: 119vh;
+    height: 100vh;
 }
 }
 
 
 
 
-#experience{
+#exp__section{
 
     display: flex;
     flex-direction: column;
     align-items: center;
-
-
-}
-.expe{
-
-
-  position: absolute;
-    top: 397%;
+    position: absolute;
+    top: 300%;
     display: flex;
   
     color: #fff;
@@ -691,30 +692,36 @@ $half: round($loops / 2);
     width: 100%;
     justify-content: center;
     font-family: 'Lato', sans-serif;
+
 }
-.expe h1{
-    line-height: 1.8em;
+
+.exp__h1{
+    line-height: 4.8em;
     font-size: 3em;
     font-weight: 700;
 
 }
-.expe span{
+.exp__span{
     color:  rgba(233, 30, 99, 0.64);
 }
-.expe h2 {
+.exp__h2 {
     line-height: 4em;
     font-size: 1em;
     padding-bottom: 5%;
 
 }
 /**barra de progresso**/
+.exp__barra {
+       position: absolute;
+    right: 27%;
+    width: 20%;
+}
 .linha-barra {
     width: 3px;
     height: 8rem;
-    background:#aa1b47;
+    background: #aa1b47;
     margin: 0 0 0 auto;
     z-index: 1;
-  /*  position: absolute;*/
     right: 18px;
 }
 .bola-barra{
@@ -726,6 +733,15 @@ $half: round($loops / 2);
     position: relative;
     z-index: 2;
 }
+.finale{
+        width: 0.7rem;
+    height: 0.2rem;
+    background-color: #aa1b47;
+    margin: 0 -6px 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
 .timeline{
     width: 100%;
     display: flex;
@@ -738,99 +754,105 @@ $half: round($loops / 2);
     width: 20%;
 }
 .paraiso{
-    top: 46%;
+    top: 55%;
     left: 28%;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
 }
 .prestige{
-   top: 72%;
+   top: 78%;
    right: 27%;
 }
     
 
-/**CONTATO**/
-.backCon{
-background: url(../img/escr.jpg)  no-repeat fixed;
-background-size: cover;
-height: 100vh;
 
-}
-.backCon {&:before {
-	content: '';
-    position: absolute;
-    right: 0;
-    left: 0;
-    background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
-    opacity: .6;
-    z-index: 9;
-   height: 100vh;
-}
-}
-  .conteudo{
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**CONTATO**/
+
+
+  #contact__section{
     
     background-color: #333b50;
     height: 94%;
     width: 100%;
     box-shadow: 0px 1px 25px 4px rgba(47,46,46,0.3);
   }
-  #contact{
-  	width: 100%;
-    height: 85%;
-  }
- .contatc{
+
+
+ .contato{
  	width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;  
     align-content: stretch;
- }
-
-.contato {
     text-align: center;
-    flex-direction: column;
+   
+ }
+.contatc{
+   flex-direction: column;
     justify-content: center;
     display: flex;
-	font-family: 'Lato', sans-serif;
-	height: 60%;
+  font-family: 'Lato', sans-serif;
+  height: 60%;
     color: #fff;
 }
-.contato h1{
+
+.contact__h1{
 	font-size: 2em;
 	line-height: 3em;
 
 }
-.contato p{
+.contact__p{
 	line-height: 1.8em;
 	
 }
-.contato a{
+.contact__a{
 	font-size: 0.85em;
 	text-decoration: none;
 	color: #BEC7D5;
 
 }
-.contato span{
+.contact__span{
+    line-height: 3em;
+    padding-bottom: 4%;
+    font-size: .85em;
+    color: #BEC7D5;
+}
+
+
+.contact__icons{
 	font-size: 0.85em;
 	color: #BEC7D5;
-    padding-bottom: 4%;
+  padding-bottom: 4%;
 }
 
 
 
-.icons{
+.contact__icons{
 	display: flex;
 	align-items: center;
 	justify-content: center;
-        padding-bottom: 3%;
+  padding-bottom: 3%;
 
 }
-.icons a {
+.icons__a {
 		  margin-right: 2%; 
 }
-.icons i{
+.contact__icons i{
 
 	font-size: 2em;
 	color: #fff;
@@ -844,6 +866,7 @@ height: 100vh;
 
 /**RODAPE**/
 .rodape{
+    box-shadow: 0 1px 11px rgb(53, 49, 49) inset;
     background-color: #333b50;
     width: 92%;
     display: flex;
