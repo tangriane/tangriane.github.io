@@ -61,10 +61,10 @@ $branco: #fff;
 
 /**HOME**/
 .header__nav{
-	background-color: $cor-padrao;
-	box-shadow: 0px 2px 10px #544747 inset;
-	align-items: center;
-	padding: 1% 0;
+  background-color: $cor-padrao;
+  box-shadow: 0px 2px 10px #544747 inset;
+  align-items: center;
+  padding: 1% 0;
   display: flex;
   width: 100%;
   z-index: 9999;
@@ -912,6 +912,82 @@ $half: round($loops / 2);
 
 
 
+/*******************testes***************************************/
+
+.cover {
+    width: 100px;
+    height:100px;
+   position:relative;  
+   border-radius: 50%;
+   overflow:hidden;
+   border: 2px solid #a9796a;
+   float:left;
+   margin:5px;
+   transition: all 1s;
+ -moz-transition: all 1s; /* Firefox 4 */
+ -webkit-transition: all 1s; /* Safari and Chrome */
+ -o-transition: all 1s; /* Opera */
+ }
+ 
+ .cover:hover{
+    border-color: rgba(233,30,99,.64);
+ }
+ 
+ .box3d {
+    width: 100%;
+    height:100px;
+   border-radius: 50%;
+   position:absolute;
+   top: 0px;
+   left: 0px;
+   transition: all 1s;
+ -webkit-transition: all 1000ms cubic-bezier(0.175, 0.885, 0.320, 1); /* older webkit */
+ -webkit-transition: all 1000ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+    -moz-transition: all 1000ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+     -ms-transition: all 1000ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+      -o-transition: all 1000ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+         transition: all 1000ms cubic-bezier(0.175, 0.885, 0.320, 1.275); /* easeOutBack */
+   -webkit-backface-visibility: hidden;
+   -moz-backface-visibility: hidden;
+   -webkit-transform-style: preserve-3d;
+ }
+ 
+ .box3d:first-child {
+    text-align:right;
+   -webkit-transform: rotateY(180deg); /* Safari and Chrome */
+   -moz-transform: rotateY(180deg);
+ }
+ 
+ .cover:hover .box3d{
+     transform: rotateY(180deg);
+   -webkit-transform: rotateY(180deg); /* Safari and Chrome */
+   -moz-transform: rotateY(180deg); /* Firefox */ 
+ }
+ 
+ .cover:hover .box3d:first-child{
+    z-index:1;  
+    transform: rotateY(0deg);
+   -webkit-transform: rotateY(0deg); /* Safari and Chrome */
+   -moz-transform: rotateY(0deg);
+ }
+ 
+ .pic1 {
+    background: url('/assets/img/giy.png') no-repeat center center; 
+ }
+ 
+ .pic2 {
+    background: url('/assets/img/git.png') no-repeat center center; 
+ }
+ 
+ .pic3 {
+    background: url('/assets/img/css.png') no-repeat center center; 
+ }
+ 
+ .pic4 {
+    background: url('/assets/img/git.png') no-repeat center center; 
+ }
+ 
+ 
 
 
 

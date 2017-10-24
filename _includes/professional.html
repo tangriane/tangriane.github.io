@@ -2,34 +2,56 @@
   <section id="sobre__section">
   
     <a href="#"> <img class="sobre__logo" src="assets/img/logo.png"></a>
-    
-    
-    <p class="sobre__p">MEU PRIMEIRO CONTATO COM O DESENVOLVIMENTO FOI EM UM CURSO
-    <p class="sobre__p"> DE WEB DESIGN ONDE EU FIZ MEU PRIMEIRO</p>
+  
+    <p class="sobre__p">MY FIRST CONTACT WITH DEVELOPMENT WAS IN A COURSE</p>
+    <p class="sobre__p">WEB DESIGN WHERE I DID MY FIRST</p>
     <p class="sobre__p">"HELLO WORLD"</p>
-    <p class="sobre__p">E ISSO FOI INCRIVEL! DEPOIS DISSO NÃO PAREI...</p> 
-     <h1 class="sobre__h1"><span class="sobre__span">#1</span>Skill</h1>
+    <p class="sobre__p">AND IT WAS INCREDIBLE! AFTER THAT I DID NOT STOP ...</p> 
+     <h1 class="sobre__h1"><span class="sobre__span">#1 </span>Skill</h1>
    <!-- <button class="sobre__button">DOWLOAD RESUME</button>-->
 <div class="sobre__skill">
  
 
-    <div class="avatar-container p-1">
-    <img src="assets/img/php.png" alt="php" class="avatar"/>
-    
-    </div>
-    <div class="avatar-container p-1">
-        <img src="assets/img/css.png" alt="" class="avatar"/>
-    </div>
-     <div class="avatar-container p-1">
-      <img src="assets/img/js.png" alt="javascript" class="avatar"/>
-    </div>
-     <div class="avatar-container p-1">
-        <img src="assets/img/git.png" alt="git" class="avatar"/>
-    </div>
-     <div class="avatar-container p-1">
-      <img src="assets/img/teste.png" alt="html" class="avatar"/>
-    </div>
-</div>
+    <div class="cover">
+        <div class="box3d pic1">
+          &nbsp;
+        </div>
+        <div class="box3d pic2">
+          &nbsp;
+        </div>
+      </div>
+      <div class="cover">
+        <div class="box3d pic3">
+          &nbsp;
+        </div>
+        <div class="box3d pic4">
+          &nbsp;
+        </div>
+      </div>
+      <div class="cover">
+          <div class="box3d pic5">
+            &nbsp;
+          </div>
+          <div class="box3d pic6">
+            &nbsp;
+          </div>
+        </div>
+        <div class="cover">
+            <div class="box3d pic7">
+              &nbsp;
+            </div>
+            <div class="box3d pic8">
+              &nbsp;
+            </div>
+          </div>
+          <div class="cover">
+              <div class="box3d pic9">
+                &nbsp;
+              </div>
+              <div class="box3d pic10">
+                &nbsp;
+              </div>
+            </div>
 
 </section>
 <div class="sobre__back"></div>
@@ -38,21 +60,3 @@
 
 
 
-
-<script type="text/javascript">
-  $('.avatar-container').on('click',function(){
-  
-  if ($(this).find('.info').length <= 0) {
-    $(this).append('<div class="info"><div class="info-inner"></div></div>');
-  }
-  
-  var $info = $(this).find('.info'),
-      $inner= $(this).find('.info-inner'),
-      $p    = $(this).attr("class").match(/p-\w+/).toString().substring(2);
-  
-  $inner.text($p+'%');
-  $info.toggleClass('js-active');
-});
-
-$('.avatar-container').last().trigger('click');
-</script>
