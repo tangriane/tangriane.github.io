@@ -201,3 +201,30 @@ window.onload = function() {
   regenerateTriangles();
 
 };
+var prim        = null;
+var segu        = null;
+ 
+$(document).ready(function(){
+    prim = $(window).scrollTop();
+    $(window).scroll(function () {
+        segu = $(window).scrollTop();
+        if (prim < segu) {
+          $("header").removeClass("header__nav").addClass("header__teste").show();
+        prim = $(window).scrollTop();
+        } else {
+          $("header").removeClass("header__teste").addClass("header__nav").show();
+        prim = $(window).scrollTop();
+        }
+    });
+});
+
+
+/*
+$(document).on("scroll",function(){
+  if($(document).scrollTop()>700){ //QUANDO O SCROLL PASSAR DOS 100px DO TOPO
+      $("header").removeClass("header__teste").addClass("header__nav"); //VOLTA P MENU GRANDE ORIGINAL
+    
+  } else{
+      $("header").removeClass("header__nav ").addClass("header__teste"); //TROCA P CLASSE MENOR
+  }
+});*/
