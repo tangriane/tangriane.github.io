@@ -219,12 +219,10 @@ $(document).ready(function(){
 });
 
 
-/*
-$(document).on("scroll",function(){
-  if($(document).scrollTop()>700){ //QUANDO O SCROLL PASSAR DOS 100px DO TOPO
-      $("header").removeClass("header__teste").addClass("header__nav"); //VOLTA P MENU GRANDE ORIGINAL
-    
-  } else{
-      $("header").removeClass("header__nav ").addClass("header__teste"); //TROCA P CLASSE MENOR
-  }
-});*/
+var $doc = $('html, body');
+$('.nav__link').click(function() {
+    $doc.animate({
+        scrollTop: $( $.attr(this, 'href') ).offset().top
+    }, 500);
+    return false;
+});
