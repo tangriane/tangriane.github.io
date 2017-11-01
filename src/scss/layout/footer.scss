@@ -1,0 +1,19 @@
+.rodape{
+    box-shadow: 0 1px 11px rgb(53, 49, 49) inset;
+    background-color: #333b50;
+    width: 92%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2% 6% 2% 2%;
+}
+.logo_img{
+	width: 40px;
+	height: 40px;
+}
+.copy{
+	font-size: 0.9em;
+	font-family: 'Lato', sans-serif;
+	color: #BEC7D5;
+}
+
