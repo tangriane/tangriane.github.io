@@ -2,22 +2,22 @@ p {
   text-transform: uppercase;
 }
 .header__teste{
-    background-color:transparent;
-    position: absolute;
-   align-items: center;
-   padding: 1% 0;
    display: flex;
+   align-items: center;
+   background-color:transparent;
+   position: absolute;
+   padding: 1% 0;
    width: 100%;
    z-index: 9999;
    transition: all 0.8s cubic-bezier(.25, .8, .25, 1) 0s;
  }
 .header__nav{
-    display: none;
-  background-color: $cor-padrao;
-  box-shadow: 0px 2px 10px #544747 inset;
-  align-items: center;
-  padding: 1% 0;
+ 
   display: flex;
+  align-items: center;
+  background-color:  #333b50;
+  box-shadow: 0px 2px 10px #544747 inset;
+  padding: 1% 0;
   width: 100%;
   z-index: 9999;
   position: fixed;
@@ -31,17 +31,14 @@ p {
 }
 .logo__div{
   flex-grow: 5;
-    text-align: center;
+  text-align: center;
 }
 
 .nav__conteudo{
-
     flex-grow: 3;
     align-items: center;
     text-align: start;
 }
-
-
 .nav__link{
     
      color: $cor-nav;
@@ -54,34 +51,28 @@ p {
 }
 
 .nav__link:hover{
-  color:white;
+  color: $branco;
 	transition: 0.3s;
-	
 }
-
 
 .home__main{
-     height: 100vh;
-    justify-content: center;
-    align-items: center;
-    display: flex;
- 
+    height: 100vh;
+    @extend %flex-center;
 }
 .home__h1{
-	color: #fff;
-    font-size: 6em;
+	color:$branco;
+  font-size: 6em;
 	font-weight: 900;
-	font-family: 'Lato', sans-serif;
+	font-family: $font-full;
 }
 .home__h2{
-	color: #fff;
-    font-size: 1.2em;
-	font-family: 'Lato', sans-serif;
+	color: $branco;
+  font-size: 1.2em;
+	font-family: $font-full;
 	line-height: 4.8em;
 }
 .home__conteudo{
-	display: flex;
-	flex-direction: column;
+	@extend %flex-direction;
 	width: 57%;
 }
 .home__span{

@@ -2,14 +2,10 @@
 
 .portfolio__section{
     
-        display: flex;
+    @extend %flex-center;
         flex-direction: column;
-        align-items: center;
-        display: flex;
-        color: #fff;
-        align-content: center;
+        color:$branco;
         width: 100%;
-        justify-content: center;
         font-family: 'Lato', sans-serif;
         background-color: #333b50;
         height: 100vh;
