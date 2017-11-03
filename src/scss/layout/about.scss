@@ -1,4 +1,4 @@
-.sobre__section {
+.about__section {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,24 +12,24 @@
   font-family: $font-full;
 }
 
-.sobre__logo {
+.about__logo {
   width: 100px;
   height: 100px;
   margin-bottom: 19%;
   margin-top: 30%;
 }
 
-.sobre__p {
+.about__p {
   line-height: 1.8em;
 }
 
-.sobre__back {
+.about__back {
   background: url(/assets/img/proficional.jpg) no-repeat fixed;
   background-size: cover;
   height: 100vh;
 }
 
-.sobre__back {
+.about__back {
   &:before {
     content: '';
     position: absolute;
@@ -42,26 +42,19 @@
   }
 }
 
-.sobre__h1 {
+.about__h1 {
   font-size: $tam-h1;
   font-weight: 700;
   line-height: 3em;
   padding-bottom: 30px;
 }
 
-.sobre__span {
+.about__span {
   color: rgba(233, 30, 99, 0.64);
 }
 
-.test {
-  border: 1px solid $cor-detalhe;
-  border-radius: 50%;
-  z-index: 4;
-}
-
-.test:hover {
-  border: 6px solid $cor-padrao;
-  transition: 0.5;
+.alinhar{
+  display: flex;
 }
 
 .abount__spin {
@@ -81,6 +74,7 @@
 .back {
   width: 128px;
   height: 128px;
+  margin-right: 12px;
 }
 
 .spin {
@@ -104,10 +98,16 @@
   img {
     border-radius: 50%;
   }
+  i{
+    font-size: 9rem;
+  }
 }
 
 .back {
   transform: rotateY(-180deg);
+  i{
+    font-size: 9rem;
+  }
   img {
     border-radius: 50%;
   }
