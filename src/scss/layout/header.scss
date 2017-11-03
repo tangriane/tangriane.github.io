@@ -1,21 +1,31 @@
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
 p {
   text-transform: uppercase;
 }
-.header__teste{
-   display: flex;
-   align-items: center;
-   background-color:transparent;
-   position: absolute;
-   padding: 1% 0;
-   width: 100%;
-   z-index: 9999;
-   transition: all 0.8s cubic-bezier(.25, .8, .25, 1) 0s;
- }
-.header__nav{
- 
+
+.header__teste {
   display: flex;
   align-items: center;
-  background-color:  #333b50;
+  background-color: transparent;
+  position: absolute;
+  padding: 1% 0;
+  width: 100%;
+  z-index: 9999;
+  transition: all 0.8s cubic-bezier(.25, .8, .25, 1) 0s;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  background-color: #333b50;
   box-shadow: 0px 2px 10px #544747 inset;
   padding: 1% 0;
   width: 100%;
@@ -24,60 +34,67 @@ p {
   transition: all 0.8s cubic-bezier(.25, .8, .25, 1) 0s;
 }
 
-.logo__header{
+.logo__header {
   width: 40px;
   height: 40px;
   align-items: center;
 }
-.logo__div{
+
+.logo__div {
   flex-grow: 5;
   text-align: center;
 }
 
-.nav__conteudo{
-    flex-grow: 3;
-    align-items: center;
-    text-align: start;
-}
-.nav__link{
-    
-     color: $cor-nav;
-     font-family: $font-full;
-     text-decoration: none;
-     transition: 0.5s;
-}
-.nav__conteudo .nav__link:not(:last-child){
-    margin-right: 21px;
+.nav__conteudo {
+  flex-grow: 3;
+  align-items: center;
+  text-align: start;
 }
 
-.nav__link:hover{
+.nav__link {
+  color: $cor-nav;
+  font-family: $font-full;
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+.nav__conteudo .nav__link:not(:last-child) {
+  margin-right: 21px;
+  &:hover {
+    color: $branco;
+    transition: 0.3s;
+  }
+}
+
+.home__main {
+  height: 100vh;
+  @extend %flex-center;
+}
+
+.home__h1 {
   color: $branco;
-	transition: 0.3s;
+  font-size: 6em;
+  font-weight: 900;
+  font-family: $font-full;
 }
 
-.home__main{
-    height: 100vh;
-    @extend %flex-center;
+.home__h2 {
+  color: $branco;
+  font-size: $tam-h2;
+  font-family: $font-full;
+  line-height: 4.8em;
 }
-.home__h1{
-	color:$branco;
-  font-size: 6em;
-	font-weight: 900;
-	font-family: $font-full;
+
+.home__conteudo {
+  @extend %flex-direction;
+  width: 57%;
 }
-.home__h2{
-	color: $branco;
-  font-size: 1.2em;
-	font-family: $font-full;
-	line-height: 4.8em;
-}
-.home__conteudo{
-	@extend %flex-direction;
-	width: 57%;
-}
-.home__span{
+
+.home__span {
   color: $cor-detalhe;
 }
-.none{
+
+.none {
   display: none;
 }
+

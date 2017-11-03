@@ -1,6 +1,6 @@
 
 .backExp{
-    background: url(../../img/fundo.jpg)  no-repeat fixed;
+    background: url(../img/fundo.jpg)  no-repeat fixed;
     background-size: 100% 100%;
     height: 100vh;
 
@@ -8,36 +8,29 @@
 .backExp {&:before {
     content: '';
     position: absolute;
-   /* top: 381%;*/
     right: 0;
     left: 0;
     background-image: linear-gradient(to bottom right,rgba(0, 0, 0, 0.93),#ab0606);
     opacity: 0.7;
-    
     z-index: 9;
-    height: 100vh;
+    height: 100vh;  
 }
 }
 .exp__section{
-
-    display: flex;
-    flex-direction: column;
+    @extend %flex-direction;
     align-items: center;
     position: absolute;
     top: 300%;
-    display: flex;
-    color: #fff;
+    color: $branco;
     z-index: 11; 
-    align-content: center;
     width: 100%;
-    justify-content: center;
     font-family: 'Lato', sans-serif;
 
 }
 
 .exp__h1{
     line-height: 4.8em;
-    font-size: 3em;
+    font-size: $tam-h1;
     font-weight: 700;
 }
 .exp__span{
@@ -45,7 +38,7 @@
 }
 .exp__h2 {
     line-height: 4em;
-    font-size: 1em;
+    font-size: $tam-h2;
     padding-bottom: 5%;
 }
 /**barra de progresso**/

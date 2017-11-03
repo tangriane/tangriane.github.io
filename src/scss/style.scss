@@ -1,35 +1,30 @@
-
 @import 'base/normalize';
 @import 'helpers/variaveis.scss';
 @import 'helpers/mixins';
-
-
 @import 'layout/header';
-@import 'layout/sobre';
+@import 'layout/about';
 @import 'layout/portfolio';
 @import 'layout/experience';
-@import 'layout/contato';
+@import 'layout/contact';
 @import 'layout/footer';
 
-
-
 /*mobile rodape*/
-@media only screen and (max-device-width:480px){
-    /*rodape e contato*/
 
-    .contact__icons{
+@media only screen and (max-device-width:480px) {
+    /*rodape e contato*/
+    .contact__icons {
         font-size: 2em;
-      }
-      .icons__a:not(:last-child) {
+    }
+    .icons__a:not(:last-child) {
         margin-right: 78px;
-      }
-      .contact__h1 {
+    }
+    .contact__h1 {
         font-size: 7em;
-      }
-      .contact__a {
+    }
+    .contact__a {
         font-size: 2.8em;
-      }
-      .contact__p {
+    }
+    .contact__p {
         font-size: 3em;
     }
     .contact__icons i {
@@ -47,72 +42,67 @@
     .rodape {
         flex-direction: column;
     }
-    .logo{
+    .logo {
         line-height: 3em;
     }
-   .logo_img{ width: 90px;
-    height: 90px;
-   }
-
-   /**HOME RESPONSIVO**/
-   
-   
-    .home__h1{
-     font-size: 8em;
+    .logo_img {
+        width: 90px;
+        height: 90px;
+    }
+    /**HOME RESPONSIVO**/
+    .home__h1 {
+        font-size: 8em;
     }
     .home__h2 {
-       font-size: 3.2em;
+        font-size: 3.2em;
     }
-    .header__teste{
+    .header__teste {
         background-color: transparent;
     }
-    .home__conteudo{
-     width: 100%;
-     margin: 100px;
+    .home__conteudo {
+        width: 100%;
+        margin: 100px;
     }
-    .logo__header{
-       width: 150px;
-       height: 150px;
-       align-items: center;
-       margin: 15px 0 15px;
-       }
-   
-     .nav__conteudo{
-       display: none;
-     }
-     .none{
+    .logo__header {
+        width: 150px;
+        height: 150px;
+        align-items: center;
+        margin: 15px 0 15px;
+    }
+    .nav__conteudo {
+        display: none;
+    }
+    .none {
         display: block;
-     }
-     .home__menu .fa {
-       font-size: 6em;
-       padding: 26px 32px 26px 32px;
-       color: #fff;
-       cursor: pointer;
-   }
-   .home__menu{
-       text-align: center;
-       margin-right: 63px;
-   }
-   .logo__div{
-       flex-grow: 1;
-       text-align: left;
-       margin-left: 82px;
-   
-     }
-     .header__nav{
-       background-color: transparent;
-     }
-
-     /*******Experience********/
-     .exp__h1 {
+    }
+    .home__menu .fa {
+        font-size: 6em;
+        padding: 26px 32px 26px 32px;
+        color: #fff;
+        cursor: pointer;
+    }
+    .home__menu {
+        text-align: center;
+        margin-right: 63px;
+    }
+    .logo__div {
+        flex-grow: 1;
+        text-align: left;
+        margin-left: 82px;
+    }
+    .header__nav {
+        background-color: transparent;
+    }
+    /*******Experience********/
+    .exp__h1 {
         font-size: 7em;
-     }
-     .exp__barra {
+    }
+    .exp__barra {
         right: 7%;
         font-size: 2.8em;
         width: 38%;
-     }
-     .prestige {
+    }
+    .prestige {
         font-size: 2.8em;
         right: 7%;
         width: 38%;
@@ -125,43 +115,39 @@
     }
     .bola-barra {
         width: 2rem;
-        height: 2rem;   
+        height: 2rem;
         border-radius: 1.5rem;
     }
     .linha-barra {
         width: 5px;
         height: 18rem;
         margin: 0 4px 0 auto;
-        
     }
-
     .finale {
         width: 2rem;
         margin: 0px -14px 0 auto;
     }
-
     /*********Portifolio************/
     .portfolio__h1 {
         font-size: 7em;
-     }
-     .portfolio__h2 {
+    }
+    .portfolio__h2 {
         font-size: 2.8em;
-     }
+    }
     /***********Sobre*******************/
     .sobre__logo {
         width: 200px;
         height: 200px;
         margin-bottom: 19%;
-     }
-     .sobre__h1 {
+    }
+    .sobre__h1 {
         font-size: 7em;
         line-height: 2em;
     }
-    .sobre__p{
+    .sobre__p {
         font-size: 2em;
     }
-   .cover{
-    border: 1px solid #a9796a;
-   }
+    .cover {
+        border: 1px solid #a9796a;
+    }
 }
-

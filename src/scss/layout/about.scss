@@ -1,0 +1,114 @@
+.sobre__section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  top: 100%;
+  z-index: 11;
+  position: absolute;
+  height: 100%;
+  color: $branco;
+  font-family: $font-full;
+}
+
+.sobre__logo {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 19%;
+  margin-top: 30%;
+}
+
+.sobre__p {
+  line-height: 1.8em;
+}
+
+.sobre__back {
+  background: url(/assets/img/proficional.jpg) no-repeat fixed;
+  background-size: cover;
+  height: 100vh;
+}
+
+.sobre__back {
+  &:before {
+    content: '';
+    position: absolute;
+    right: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
+    opacity: .6;
+    z-index: 9;
+    height: 100vh;
+  }
+}
+
+.sobre__h1 {
+  font-size: $tam-h1;
+  font-weight: 700;
+  line-height: 3em;
+  padding-bottom: 30px;
+}
+
+.sobre__span {
+  color: rgba(233, 30, 99, 0.64);
+}
+
+.test {
+  border: 1px solid $cor-detalhe;
+  border-radius: 50%;
+  z-index: 4;
+}
+
+.test:hover {
+  border: 6px solid $cor-padrao;
+  transition: 0.5;
+}
+
+.abount__spin {
+  transform-style: preserve-3d;
+}
+
+.abount__spin:hover .back {
+  transform: rotateY(0deg);
+}
+
+.abount__spin:hover .front {
+  transform: rotateY(180deg);
+}
+
+.abount__spin,
+.front,
+.back {
+  width: 128px;
+  height: 128px;
+}
+
+.spin {
+  transition: 0.4s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.front,
+.back {
+  backface-visibility: hidden;
+  transition: 0.4s;
+  transform-style: preserve-3d;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.front {
+  z-index: 3;
+  transform: rotate(0deg);
+  img {
+    border-radius: 50%;
+  }
+}
+
+.back {
+  transform: rotateY(-180deg);
+  img {
+    border-radius: 50%;
+  }
+}
