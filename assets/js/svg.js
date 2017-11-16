@@ -192,10 +192,6 @@ function colorize() {
 
 window.onload = function() {
   canvasEl = document.getElementsByClassName("trianglecanvas")[0];
-  var gui = new dat.GUI();
-
-
-  
 
   // Kick off
   regenerateTriangles();

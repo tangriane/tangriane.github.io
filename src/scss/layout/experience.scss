@@ -1,0 +1,98 @@
+
+.back-exp{
+    background: url(../img/fundo.jpg)  no-repeat fixed;
+    background-size: 100% 100%;
+    height: 100vh;
+
+}
+.back-exp {&:before {
+    content: '';
+    position: absolute;
+    right: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom right,rgba(0, 0, 0, 0.93),#ab0606);
+    opacity: 0.7;
+    z-index: 9;
+    height: 100vh;  
+}
+}
+.exp__section{
+    @extend %flex-direction;
+    align-items: center;
+    position: absolute;
+    top: 300%;
+    color: $branco;
+    z-index: 11; 
+    width: 100%;
+    font-family: $font-full;
+
+}
+
+.exp__h1{
+    line-height: 4.8em;
+    font-size: $tam-h1;
+    font-weight: 700;
+}
+.exp__span{
+    color:  rgba(233, 30, 99, 0.64);
+}
+.exp__h2 {
+    line-height: 4em;
+    font-size: $tam-h2;
+    padding-bottom: 5%;
+}
+/**barra de progresso**/
+.exp__barra {
+       position: absolute;
+    right: 27%;
+    width: 20%;
+}
+.linha-barra {
+    width: 3px;
+    height: 8rem;
+    background: #aa1b47;
+    margin: auto;
+    z-index: 1;
+    right: 18px;
+}
+.bola-barra{
+    width: 1rem;
+    height: 1rem;
+    border-radius: .5rem;
+    background-color: #aa1b47;
+    margin: 0 -6px 0 auto;
+    position: relative;
+    z-index: 2;
+}
+.finale{
+    width: 0.7rem;
+    height: 0.2rem;
+    background-color: #aa1b47;
+    margin: -6px;
+    position: relative;
+    z-index: 2;
+}
+
+.timeline{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.posicao-barra{
+    position: absolute;
+    right: 27%;
+    width: 20%;
+}
+.paraiso{
+    top: 55%;
+    left: 28%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.prestige{
+   top: 78%;
+   right: 27%;
+}
+

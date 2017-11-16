@@ -1,0 +1,52 @@
+
+
+.portfolio__section{
+    @extend %flex-center;
+        flex-direction: column;
+        color:$branco;
+        width: 100%;
+        font-family: $font-full;
+        background-color: $cor-padrao;
+        height: 100vh;
+    }
+    .portfolio__h1{
+        line-height: 1.8em;
+        font-size: $tam-h1;
+        font-weight: 700;
+    
+    }
+    .portfolio__span{
+        color:  rgba(233, 30, 99, 0.64);
+    }
+    .portfolio__h2{
+        line-height: 4em;
+        font-size: $tam-h2;        
+        padding-bottom: 5%;
+    
+    }
+    
+    .port a {
+        text-decoration: none;
+        color: rgba(244, 63, 255, 0.77);
+        margin-left: 12px;
+    
+    }
+    .portfolio__project img {
+        width: 256px;
+        height: 256px;
+        margin: 0px;
+        opacity: 1.0; 
+        &:hover{
+            opacity: 0.6; 
+            transition: opacity 0.5s;
+        }
+    }
+   
+    .portfolio__project a {
+       
+        margin: 0px;
+    }
+    
+    .portfolio__project{
+         box-shadow: 1px 3px 32px 8px rgb(32, 37, 51);
+    }
