@@ -15,17 +15,18 @@ uglify     = require('gulp-uglify'),
 jekyll     = require ('gulp-jekyll');
 
 gulp.task('sass', function() {
-    gulp.src('src/scss/**/*.scss')
+    gulp.src('src/scss/style.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(cleancss())
         .pipe(concat('style.css'))
+        .pipe(autoprefixer())
         .pipe(rename({
             basename: 'style',
             extname: '.min.css'
         }))
         .pipe(gulp.dest('assets/css'))
     .pipe(browserSync.reload({stream:true}))
-    .pipe(notify({ message: 'Styles task complete' }));
+    .pipe(notify({ message: 'Styles task sdfsdfsdfcomplete' }));
 });
 
 
