@@ -7,7 +7,7 @@ sass        = require('gulp-sass'),
 autoprefixer= require('gulp-autoprefixer'),
 cp         = require('child_process'),
 rename     = require('gulp-rename'),
-cleancss  = require('gulp-clean-css'),
+cleancss   = require('gulp-clean-css'),
 notify     = require('gulp-notify'),
 jshint     = require('gulp-jshint'),
 concat     = require('gulp-concat'),
@@ -15,7 +15,7 @@ uglify     = require('gulp-uglify'),
 jekyll     = require ('gulp-jekyll');
 
 gulp.task('sass', function() {
-    gulp.src('src/scss/**/*.scss')
+    gulp.src('src/scss/style.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(cleancss())
         .pipe(concat('style.css'))
