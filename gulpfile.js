@@ -19,13 +19,14 @@ gulp.task('sass', function() {
         .pipe(sass().on('error', sass.logError))
         .pipe(cleancss())
         .pipe(concat('style.css'))
+        .pipe(autoprefixer())
         .pipe(rename({
             basename: 'style',
             extname: '.min.css'
         }))
         .pipe(gulp.dest('assets/css'))
     .pipe(browserSync.reload({stream:true}))
-    .pipe(notify({ message: 'Styles task complete' }));
+    .pipe(notify({ message: 'Styles task sdfsdfsdfcomplete' }));
 });
 
 
