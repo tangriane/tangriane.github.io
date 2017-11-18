@@ -19,7 +19,10 @@ gulp.task('sass', function() {
         .pipe(sass().on('error', sass.logError))
         .pipe(cleancss())
         .pipe(concat('style.css'))
-        .pipe(autoprefixer())
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
         .pipe(rename({
             basename: 'style',
             extname: '.min.css'
@@ -28,9 +31,6 @@ gulp.task('sass', function() {
     .pipe(browserSync.reload({stream:true}))
     .pipe(notify({ message: 'Styles task sdfsdfsdfcomplete' }));
 });
-
-
-
 
 /*COMEÇO DO JS*/
 gulp.task('js', function() {
@@ -45,35 +45,11 @@ gulp.task('js', function() {
 });
 /*FINAL DO CSS*/
 
-
-
 /*LIMPAR A PASTA css e js**/
 gulp.task('clean', function() {
   return gulp.src(['sass', 'js'], {read: false})
     .pipe(clean());
 });
-
-/* final da LIMPAR A PASTA css e js*/
-
-
-
-/*IMAGEM
-gulp.task('copy', ['clean'], function() {
-    return gulp.src('src/**//*')
-        .pipe(gulp.dest('assets'));
-});
-
-gulp.task('clean', function() {
-    return gulp.src('assets')
-        .pipe(clean());
-});
-
-gulp.task('build-img', function() {
-
-  return gulp.src('assets/img/**//*')
-    .pipe(imagemin())
-    .pipe(gulp.dest('assets/img'));
-});*/
 
 /*IMAGEM*/
 
@@ -94,8 +70,6 @@ gulp.task('build-img', function() {
     .pipe(gulp.dest('assets/img'));
 });
 
-
-
 /* COMEÇO ASSISTA OS ARQUIVOS  ALTERAÇÕES*/
 gulp.task('watch', function() {
   // Watch .scss files
@@ -106,8 +80,6 @@ gulp.task('watch', function() {
   gulp.watch(['assets/css/*.min.css', 'index.html', '_includes/*.html', '_layouts/*.html', '*.md', '_posts/*'], ['jekyll-rebuild']);
 });
 /*FINAL ASSISTA OS ARQUIVOS ALTERAÇÕES*/
-
-
 
 /*COMEÇA O SERVIDOR COM O JEKYLL E O BROWSER */
 gulp.task('jekyll-build', function (done) {
