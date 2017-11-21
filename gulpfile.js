@@ -29,9 +29,6 @@ gulp.task('sass', function() {
     .pipe(notify({ message: 'Styles task sdfsdfsdfcomplete' }));
 });
 
-
-
-
 /*COMEÇO DO JS*/
 gulp.task('js', function() {
   return gulp.src('src/js/*.js')
@@ -43,40 +40,10 @@ gulp.task('js', function() {
     .pipe(gulp.dest('assets/js'))
     .pipe(notify({ message: 'Scripts task complete' }));
 });
-/*FINAL DO CSS*/
-
-
-
-/*LIMPAR A PASTA css e js**/
 gulp.task('clean', function() {
   return gulp.src(['sass', 'js'], {read: false})
     .pipe(clean());
 });
-
-/* final da LIMPAR A PASTA css e js*/
-
-
-
-/*IMAGEM
-gulp.task('copy', ['clean'], function() {
-    return gulp.src('src/**//*')
-        .pipe(gulp.dest('assets'));
-});
-
-gulp.task('clean', function() {
-    return gulp.src('assets')
-        .pipe(clean());
-});
-
-gulp.task('build-img', function() {
-
-  return gulp.src('assets/img/**//*')
-    .pipe(imagemin())
-    .pipe(gulp.dest('assets/img'));
-});*/
-
-/*IMAGEM*/
-
 gulp.task('copy', ['clean'], function() {
     return gulp.src('src/img/*')
         .pipe(gulp.dest('assets/img'));
@@ -93,23 +60,11 @@ gulp.task('build-img', function() {
     .pipe(imagemin())
     .pipe(gulp.dest('assets/img'));
 });
-
-
-
-/* COMEÇO ASSISTA OS ARQUIVOS  ALTERAÇÕES*/
 gulp.task('watch', function() {
-  // Watch .scss files
   gulp.watch('src/scss/**/*.scss', ['sass']);
-  // Watch .js files
   gulp.watch('src/js/**/*.js', ['js']);
-  // Watch .html files and posts
   gulp.watch(['assets/css/*.min.css', 'index.html', '_includes/*.html', '_layouts/*.html', '*.md', '_posts/*'], ['jekyll-rebuild']);
 });
-/*FINAL ASSISTA OS ARQUIVOS ALTERAÇÕES*/
-
-
-
-/*COMEÇA O SERVIDOR COM O JEKYLL E O BROWSER */
 gulp.task('jekyll-build', function (done) {
     browserSync.notify('Building Jekyll');
     return cp.spawn('jekyll', ['build'], {stdio: 'inherit'})
@@ -130,9 +85,6 @@ gulp.task('browser-sync', ['jekyll-build'], function() {
         host: "localhost"
     });
 });
-
-/*TERMINA O SERVIDOR COM O JEKYLL E O BROWSER */
-
 
 gulp.task('default', function() {
     gulp.start('sass', 'js', 'copy', 'build-img',  'watch', 'browser-sync');

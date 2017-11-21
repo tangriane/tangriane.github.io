@@ -3,7 +3,58 @@
 <section id="experience">
  <div class="exp__section">
 	<h1 class="exp__h1"><span class="exp__span">#3</span> EXPERIENCE</h1>
-      <div class="timeline">
+        <div class="container">
+            <div class="linha-fluid">
+                <div id="lista-mes">
+                    <section class="timeline">
+                        <div class="timeline-invertid">
+                            <div class="timeline-badge primary">
+                                <span class="timeline-info-mes">
+                                    <span class="ano_post">
+                                        2017
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-head">
+                                <p class="info">Empresa</p>
+                            </div>
+                            <div class="timeline-body">
+                                <ul class="timelist-lista">
+                                    <li>
+                                        <p>teste</p>
+                                    </li>
+                                    <li>
+                                        <p>teste</p>
+                                    </li>
+                                    <li>
+                                        <p>teste</p>
+                                    </li>
+                                    <li>
+                                        <p>teste</p>
+                                    </li>
+                                    <li>
+                                        <p>teste</p>
+                                    </li>
+                                    <li>
+                                        <p>teste</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        </div>
+
+                    </section>
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+     <!--<div class="timeline">
 
                   <div class="exp__barra">
                     <div> 2012 </div>
@@ -46,16 +97,28 @@
                        
                     </div>
              
-                
-            
-               
-        </div>
-
-
+        </div>-->
     </div>
 </section>
-
-
-
-
 <div class="back-exp"></div>
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		$.each($('.timeline'),function(index,value){
+
+			if(!$(this).is(':visible')){
+				$modelo = $('.modelo_pag_meses').clone();
+				$modelo.find('.dm-cn-timeline-info-mes').html($(this).find('.dm-cn-timeline-info-mes').html());
+				$modelo.removeClass('modelo_pag_meses');
+				$modelo.attr('id',$(this).find('.dm-cn-timeline-badge').attr('id'));
+				$('#meses_pagers').append($modelo.css('display','inline-block'));
+			}
+
+		});
+		$(document).on('click','.dm-cn-nav-list',function(){
+			id = $(this).attr('id');
+			$(this).remove();
+			$('.dm-cn-timeline-badge#'+id).parents('.dm-cn-timeline').show();
+		});
+	})
+</script>

@@ -7,10 +7,6 @@ canvas {
   height: 100%;
 }
 
-p {
-  text-transform: uppercase;
-}
-
 .header__teste {
   display: flex;
   align-items: center;
@@ -76,6 +72,7 @@ p {
   font-size: 6em;
   font-weight: 900;
   font-family: $font-full;
+  text-transform: uppercase;
 }
 
 .home__h2 {
@@ -83,6 +80,7 @@ p {
   font-size: $tam-h2;
   font-family: $font-full;
   line-height: 4.8em;
+  text-transform: uppercase;
 }
 
 .home__conteudo {
@@ -92,6 +90,7 @@ p {
 
 .home__span {
   color: $cor-detalhe;
+ 
 }
 
 .none {
