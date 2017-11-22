@@ -6,6 +6,4 @@ Portifólio desenvolvido durante os estudos de mentoria do projeto [training-cen
 
 - Melhorar o conhecimento para desenvolvimento de produtos
 - Melhorar a concepção de UX 
-- Melhorar técnicas de desenvolvimento frontender
-
-
+- Melhorar técnicas de desenvolvimento frontend
