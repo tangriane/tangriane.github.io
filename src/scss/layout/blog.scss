@@ -1,0 +1,51 @@
+
+
+.blog{
+  background-color: rgb(119, 201, 119);
+  padding: 40px;
+}
+  .position{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .fungo{
+    background-color: green;
+}
+
+  .fundo{
+     display: none;
+     position: absolute;
+     background-color: #f9f9f9;
+     min-width: 160px;
+     box-shadow:  0px 8px 16px 0px rgba(0,0,0,0.2);
+     z-index: 1;
+  }
+  .fundo a{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  .fundo a:hover{
+      background-color: #f1f1f1;
+
+  }
+  .drop{
+    position: relative;
+    display: inline-block;
+}
+  .drop:hover .fundo{
+      display: block;
+  }
+  .drop:hover .dropbtn {
+    background-color: #3e8e41;
+}
+  .dropbtn{
+    background-color: rgb(110, 23, 23);
+    color: #fff;
+    padding: 16px;
+    font: 16px;
+    border: none;
+    cursor: pointer;
+  }

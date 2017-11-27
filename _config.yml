@@ -2,8 +2,8 @@ title: Tangriane
 email: tangrianekolisnichenco@gmail.com
 description: > 
  Teste para funcionar
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "tangriane.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: " " # the subpath of your site, e.g. /blog
+url: "http://192.168.100.73:3000" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: tangriane_k
 github_username:  tangriane
 
@@ -14,7 +14,11 @@ collections:
    pages:
      output: true
      permalink: /:path/
-
+links:
+  
+  - title: Blog
+    url: /blog
+  
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
