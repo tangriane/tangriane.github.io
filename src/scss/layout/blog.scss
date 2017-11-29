@@ -1,77 +1,22 @@
 
 .container{
   width: 100%;
-
   display: grid;
-  grid-template-columns: 1fr repeat(4, 2fr) 1fr;
-  grid-template-rows: 50px 100px 40px 100px 100px 50px ; 
+  grid-template-columns: 1fr repeat(4,2fr) 1fr;
+  grid-template-rows:  190px 50px 100px 100px 100px;
 }
-header{
-  background-color: rgb(218, 214, 10);
-  grid-area: 1/1/2/7;
-}
-figure{
+
+.figure{
   background-color: rgb(16, 233, 16);
- grid-area: 2/2/3/6;
+ grid-area: 1/1/2/7;
 }
-nav{
-  background-color: rgb(128, 0, 0);
-  grid-area: 3/2/4/6;
+.nav{
+  background-color: rgb(0, 23, 128);
+  grid-area: 2/1/2/7;
 }
-main{
+.main{
   background-color: rgb(231, 6, 6);
-   grid-area: 4/3/6/5;
-}
-.lateral{
-  background-color: rgb(218, 8, 200);
-  grid-area: 4/2/6/3;
-}
-.aux{
-  background-color: rgb(131, 90, 36);
- grid-area: 4/5/6/6;
-}
-footer{
-  background-color: rgb(16, 46, 16);
-  grid-area: 6/1/7/7;
-}
-
-/*.container{
-  display: grid;
-  grid-gap: 12px;
-  grid-template-columns: auto;
-  grid-template-rows: 50px 330px 50px;
-  grid-template-areas: 
-  'header header header'
-  'aside main main'
-  'footer footer footer'
-}
-.box{
-  background-color: black;
-}
-header{
-  grid-area: header;
-}
-aside{
-  grid-area: aside;
-}
-main{
-  grid-area: main;
-}
-
-
-
-/*********/
-.blog{
-  background-color: rgb(119, 201, 119);
-  padding: 40px;
-}
-  .position{
-    display: flex;
-    flex-direction: column;
-  }
-
-  .fungo{
-    background-color: green;
+   grid-area: 3/2/6/6;
 }
 
   .fundo{
