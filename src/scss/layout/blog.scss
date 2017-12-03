@@ -8,11 +8,16 @@
 
 .figure{
   background-color: rgb(16, 233, 16);
- grid-area: 1/1/2/7;
+  grid-area: 1/1/2/7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .nav{
   background-color: rgb(0, 23, 128);
   grid-area: 2/1/2/7;
+  display: flex;
+  justify-content: space-evenly;
 }
 .main{
   background-color: rgb(231, 6, 6);
@@ -34,12 +39,12 @@
     display: block;
   }
   .fundo a:hover{
-      background-color: #f1f1f1;
+      background-color: #d8dde7;
 
   }
   .drop{
     position: relative;
-    display: inline-block;
+   
 }
   .drop:hover .fundo{
       display: block;
@@ -48,10 +53,43 @@
     background-color: #3e8e41;
 }
   .dropbtn{
-    background-color: rgb(110, 23, 23);
+    background-color: #6e1717;
     color: #fff;
-    padding: 16px;
-    font: 16px;
+    padding: 17px;
+    padding-bottom: 18px;
+    font: 17px;
     border: none;
     cursor: pointer;
   }
+.box{
+  width: 80%;
+}
+.round 
+{
+  margin: 10px;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+  
+  float: left;
+ }
+.tes{
+  background-image: url('http://tinygiantstudios.co.za/wp-content/uploads/2014/01/html5logo-new.jpg');
+ 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tes img {
+  opacity: 0.5;
+}
+ .round .tes
+{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-size: cover; /*ajusta a imagem dentro do div, mantendo a proporção da imagem */
+            background-position: center center
+    }
+ 
