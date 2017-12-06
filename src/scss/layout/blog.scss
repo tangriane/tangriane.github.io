@@ -2,7 +2,7 @@
 .container{
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr repeat(4,2fr) 1fr;
+  grid-template-columns: 1fr repeat(2,2fr) 1fr;
   grid-template-rows:  325px 100px 45vh 100px 100px;
  
   
@@ -23,7 +23,7 @@
 }
 .main{
   background-color: #333b50;
-   grid-area: 3/2/6/6;
+   grid-area: 3/1/6/6;
    align-items: center;
    display: flex;
    justify-content: center;
@@ -78,8 +78,7 @@
   overflow: hidden;
   width: 80px;
   height: 80px;
-  
-  float: left;
+ 
  }
 .tes{
   background-image: url('http://tinygiantstudios.co.za/wp-content/uploads/2014/01/html5logo-new.jpg') ;
@@ -114,22 +113,33 @@
   color: white;
   font-family: Lato,sans-serif;
   text-transform: uppercase;
-  line-height: 1em;
+  line-height: 3em;
+  margin-left: 15px;
 }
 .descricao{
   color: white;
   font-family: Lato,sans-serif;
+  line-height: 3em;
 }
 ul.lista{
-  list-style-position: inside;
-    list-style-type: none;
+  width: 80%;
     
 }
 
 
+.lista li{
+  display: flex;
+  align-items: center;
+  border-top: 1px solid rgba(66, 72, 88, 0.62);
+  
+ 
+}
 
-
-
+.titulo__div{
+  display: flex;
+  flex-direction: column;
+  
+}
 
 
 
