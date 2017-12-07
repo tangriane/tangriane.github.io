@@ -20,6 +20,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 1px 11px #353131 inset;
 }
 .main{
   background-color: #333b50;
@@ -28,48 +29,6 @@
    display: flex;
    justify-content: center;
 
-}
-
-  .fundo{
-     display: none;
-     position: absolute;
-  background-color: #333b50;
- 
-     min-width: 160px;
-     box-shadow:  0px 8px 16px 0px rgba(0,0,0,0.2);
-     z-index: 1;
-  }
-  .fundo a{
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-  .fundo a:hover{
-      background-color: #d8dde7;
-
-  }
-  .drop{
-    position: relative;
-   
-}
-  .drop:hover .fundo{
-      display: block;
-  }
-  .drop:hover .dropbtn {
-    background-color: #3e8e41;
-}
-  .dropbtn{
-    background-color: #6e1717;
-    color: #fff;
-    padding: 17px;
-    padding-bottom: 18px;
-    font: 17px;
-    border: none;
-    cursor: pointer;
-  }
-.box{
-  width: 80%;
 }
 .round 
 {
@@ -82,11 +41,13 @@
  }
 .tes{
   background-image: url('http://tinygiantstudios.co.za/wp-content/uploads/2014/01/html5logo-new.jpg') ;
-  opacity: 0.5;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: black;
 }
+
+
 
  .round .tes
 {
@@ -108,13 +69,12 @@
   font-size: 2em;
   color: white;
 }
-.titulo a{
+ul a{
   text-decoration: none;
-  color: white;
+  
   font-family: Lato,sans-serif;
   text-transform: uppercase;
-  line-height: 3em;
-  margin-left: 15px;
+
 }
 .descricao{
   color: white;
@@ -122,7 +82,7 @@
   line-height: 3em;
 }
 ul.lista{
-  width: 80%;
+  width: 62%;
     
 }
 
@@ -131,14 +91,18 @@ ul.lista{
   display: flex;
   align-items: center;
   border-top: 1px solid rgba(66, 72, 88, 0.62);
+  opacity: 0.5;
+  transition-duration: 1s;
   
  
 }
-
+.lista li:hover {
+  opacity: 1.0;
+}
 .titulo__div{
   display: flex;
   flex-direction: column;
-  
+  margin-left: 16px;  
 }
 
 
