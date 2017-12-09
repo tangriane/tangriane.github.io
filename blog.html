@@ -1,20 +1,22 @@
 ---
-
+layout: page
 title: Blog
-description: Publicação de tudo
+description: teste
 ---
 
 {% if site.posts.size == 0 %}
-  <h3 class="homeBlog__noPost">No posts found :(</h3>	
-{% else %}
+  <h3 class="homeBlog__noPost">No posts found </h3>	
+  {% else %}
   {% for post in site.posts %}
 
-  <a class="homeBlog__post__link" href="{{ post.url }}">
-    <h3 class="homeBlog__post">{{ post.title }}</h3>
-    <div class="homeBlog__post__postDate">
-      <time>{{ post.date | date_to_string }}</time>
-    </div>
-  </a>
+    <a class="homeBlog__post"  style="background-image: url({{ post.image }});" href="{{ post.url }}">
+      <div class="homeBlog__post__box">
+        <h3 class="homeBlog__post__title">{{ post.title }}</h3>
+        <div class="homeBlog__post__date">
+          <time>{{ post.date | date_to_string }}</time>
+        </div>
+      </div>
+    </a>
 
   {% endfor %}
 {% endif %}
