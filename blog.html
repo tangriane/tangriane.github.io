@@ -9,14 +9,54 @@ description: teste
   {% else %}
   {% for post in site.posts %}
 
-    <a class="homeBlog__post"  style="background-image: url({{ post.image }});" href="{{ post.url }}">
-      <div class="homeBlog__post__box">
-        <h3 class="homeBlog__post__title">{{ post.title }}</h3>
-        <div class="homeBlog__post__date">
-          <time>{{ post.date | date_to_string }}</time>
-        </div>
-      </div>
-    </a>
+    <div class="container">
+      
+              <div class="artigo one figure">
+                  <div class="content">post's</div>
+                  <div class="wrapper"></div>
+              </div>
+      
+              <div class="nav">
+                  <strong class="post__h1">Últimos Posts</strong>
+              </div>
+              <div class="main">
+                  <ul class="lista">
+                      <a href="{{ post.url }}/">
+                          <li>
+      
+                              <div class="round">
+                                  <div class="tes">
+                                      <p><time>{{ post.date | date_to_string }}</time></p>
+                                  </div>
+      
+                              </div>
+                              <div class="titulo__div">
+                                  <h2 class="titulo">
+      
+                                    {{ post.title }}
+      
+                                  </h2>
+      
+                                  <p class="descricao">
+                                      {{ post.description}}
+                                  </p>
+                              </div>
+      
+                          </li>
+                      </a>
+                    
+                  </ul>
+              </div>
+          </div>
+
+
+
+
+
+
+
+
+
 
   {% endfor %}
 {% endif %}
