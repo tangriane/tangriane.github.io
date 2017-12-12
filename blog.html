@@ -1,13 +1,4 @@
----
-layout: page
-title: Blog
-description: teste
----
-
-{% if site.posts.size == 0 %}
-<h3 class="">No posts found </h3>
-{% else %} {% for post in site.posts %}
-
+--- layout: page title: Blog description: teste ---
 <div class="container">
 
     <div class="artigo one figure">
@@ -20,6 +11,11 @@ description: teste
     </div>
     <div class="main">
         <ul class="lista">
+            {% if site.posts.size == 0 %}
+            <h3 class="">No posts found </h3>
+            {% else %} {% for post in site.posts %}
+
+
             <a href="{{ post.url }}">
                 <li>
 
@@ -46,10 +42,10 @@ description: teste
                 </li>
             </a>
 
+
+
+
+            {% endfor %} {% endif %}
         </ul>
     </div>
 </div>
-
-
-
-{% endfor %} {% endif %}
