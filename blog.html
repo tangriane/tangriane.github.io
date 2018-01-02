@@ -1,6 +1,4 @@
---- 
-layout: default
----
+--- layout: default ---
 
 
 
@@ -15,15 +13,16 @@ layout: default
         <strong class="post__h1">Últimos Posts</strong>
     </div>
 
-   
-    <div class="main">
-            {% if site.posts.size == 0 %}
-            <h3 class="">No posts found </h3>
-            {% else %} {% for post in site.posts %}
-        <ul class="lista">
-            <a href="{{ post.url }}">
-                <li>
 
+    <div class="main">
+       
+        <ul class="lista">
+                {% if site.posts.size == 0 %}
+                <h3 class="">No posts found </h3>
+                {% else %} {% for post in site.posts %}
+            <li>
+
+                <a href="{{ post.url }}">
                     <div class="round">
                         <div class="tes">
                             <p>
@@ -43,12 +42,10 @@ layout: default
                             {{ post.description}}
                         </p>
                     </div>
-
-                </li>
-            </a>
+                  
+            </li>
             {% endfor %} {% endif %}
         </ul>
-       
+
     </div>
 </div>
-

@@ -1,23 +1,18 @@
 title: Tangriane
 email: tangrianekolisnichenco@gmail.com
 description: > 
- Teste para funcionar
-baseurl: " " # the subpath of your site, e.g. /blog
-url: "http://192.168.100.73:3000" # the base hostname & protocol for your site, e.g. http://example.com
+ Portifolio 
+markdown: kramdown
+permalink: ':title/'
+baseurl: "tangriane.github.io" # the subpath of your site, e.g. /blog
+url: "tangriane.com.br" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: tangriane_k
 github_username:  tangriane
 
-# Build settings
-markdown: kramdown
 
-collections:
-   pages:
-     output: true
-     permalink: /:path/
-links:
-  
-  - title: Blog
-    url: /blog
+# Build settings
+
+
   
 
 # Exclude from processing.
