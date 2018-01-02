@@ -15,10 +15,11 @@ layout: default
         <strong class="post__h1">Últimos Posts</strong>
     </div>
 
-    {% if site.posts.size == 0 %}
-    <h3 class="">No posts found </h3>
-    {% else %} {% for post in site.posts %}
+   
     <div class="main">
+            {% if site.posts.size == 0 %}
+            <h3 class="">No posts found </h3>
+            {% else %} {% for post in site.posts %}
         <ul class="lista">
             <a href="{{ post.url }}">
                 <li>
@@ -45,9 +46,9 @@ layout: default
 
                 </li>
             </a>
-
+            {% endfor %} {% endif %}
         </ul>
-        {% endfor %} {% endif %}
+       
     </div>
 </div>
 
