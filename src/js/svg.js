@@ -197,7 +197,6 @@ window.onload = function() {
 
   // Kick off
   regenerateTriangles();
-
 };
 var prim        = null;
 var segu        = null;
