@@ -4,7 +4,7 @@ description: >
  Portifolio 
 markdown: kramdown
 permalink: ':title/'
-baseurl: "tangriane.github.io" # the subpath of your site, e.g. /blog
+baseurl: "/" # the subpath of your site, e.g. /blog
 url: "tangriane.com.br" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: tangriane_k
 github_username:  tangriane
