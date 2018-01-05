@@ -1,34 +1,41 @@
 
-.container{
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr repeat(2,2fr) 1fr;
-  grid-template-rows:  325px 100px 45vh 100px 100px;
- 
-  
+.main {
+  grid-area: content;
+  position: relative;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background-color: #333b50;
 }
-
 .figure{
-  grid-area: 1/1/2/7;
+  grid-area: sidebar;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 45vh;
 }
 .nav{
   background-color:#333b50;
-  grid-area: 2/1/2/7;
+  grid-area: header;
   display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: 0 1px 11px #353131 inset;
+  height: 11vh;
 }
-.main{
+.wrappe {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 500px 100px 100px;
+  grid-template-areas:
+  "header  header  header"
+  "sidebar  sidebar  sidebar"
+  "content content content";
   background-color: #333b50;
-   grid-area: 3/1/6/6;
-   align-items: center;
-   display: flex;
-   justify-content: center;
-
+  color: #444;
+}
+.container{
+width: 100%;
 }
 .round 
 {
@@ -72,6 +79,8 @@
 ul a{
   text-decoration: none;
   font-family: Lato,sans-serif;
+  display: flex;
+  align-items: center;
 
 
 }
@@ -93,7 +102,7 @@ ul.lista{
   border-top: 1px solid rgba(66, 72, 88, 0.62);
   opacity: 0.5;
   transition-duration: 1s;
-  margin: 5em 0;
+  padding: 50px;
 
 }
 .lista li:hover {
