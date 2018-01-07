@@ -11,13 +11,12 @@
     text-transform: uppercase;
     font-size: 5em;
     font-weight: 900;
+    position: fixed;
    
     &:before, &:after {
         width: 66%;
         height: 1px;
         display: block;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
         align-items: center;
         background-color: #343b50;
         content: "";
@@ -28,18 +27,96 @@
 
 
 .post_image{
-    background: url(/assets/img/poste.jpg);
+    background: url(/assets/img/poste.jpg)no-repeat fixed;
     background-size: cover;
     width: 100%;
-    position: fixed;
     height: 600px;
     
 }
 
 .entry_content{
     background: #333b50;
-    position: relative;
-    top: 600px;
     font-family: 'Raleway', sans-serif;   
     padding: 123px 123px 0 123px;
+    padding-bottom: 3rem;
 }
+
+.recent_title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+    font-weight: 700;
+    line-height: 1em;
+    padding-bottom: 30px; 
+}
+.recent_list{
+    margin: 0px auto;
+    max-width: 800px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap; 
+    padding-bottom: 2rem;
+   
+}
+.recent_box{
+    background-color: #343b50;
+}
+.recent_list a{
+    background-color: #fff;
+    width: 260px;
+    height: 180px;
+    margin: 2px;
+    text-align: center;
+    font-weight: 700;
+    font-family: sans-serif;
+    color: #070006;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    position: relative;
+ 
+    
+}
+.recent_image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .recent_span {
+    white-space: nowrap; 
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(0, 0, 0);
+    opacity:0.7;
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    transition: .5s ease;
+  }
+  
+  .recent_list a:hover .overlay {
+    width: 100%;
+  }
+ .post_footer{
+    padding: 2rem 0;
+    background-color: #ffffff;
+    border-top: 2px solid #6e6e6e;
+ }  
+  
+
+
+  

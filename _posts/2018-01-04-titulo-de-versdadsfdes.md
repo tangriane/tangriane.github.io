@@ -1,10 +1,9 @@
 ---
 layout: post
-title:  "pode mais se dissociar do 3"
-img: poste.jpg
+title:  "das condições financeiras e administrativas"
 date:   2018-01-01
-description: asqqqqqdasda
-
+description: wwwww
+img: poste.jpg
 ---
 A prática cotidiana prova que a competitividade nas transações comerciais maximiza as possibilidades por conta dos conhecimentos estratégicos para atingir a excelência. Evidentemente, o novo modelo estrutural aqui preconizado cumpre um papel essencial na formulação dos índices pretendidos. No mundo atual, a execução dos pontos do programa afeta positivamente a correta previsão do sistema de participação geral. 
 

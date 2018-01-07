@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "pode mais se dissociar do 3"
+title:  "esmo modo, a percepção das "
 img: poste.jpg
 date:   2018-01-01
 description: asqqqqqdasda
