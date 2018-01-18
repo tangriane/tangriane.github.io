@@ -1,8 +1,14 @@
 
 
-  
+  .post_image{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 .post_image h1{
-    text-align: center;
+   
     text-shadow: 2px 3px 1px #000;
     font-size: 50px;
     padding: 150px 0 150px 0;
@@ -14,7 +20,7 @@
     position: fixed;
    
     &:before, &:after {
-        width: 66%;
+       
         height: 1px;
         display: block;
         align-items: center;
@@ -37,9 +43,14 @@
 .entry_content{
     background: #333b50;
     font-family: 'Raleway', sans-serif;   
-    padding: 123px 123px 0 123px;
+    padding: 95px 274px 0 274px;
     padding-bottom: 3rem;
+    color: #fff;
+    font-family: Lato,sans-serif;
+    text-transform: uppercase;
+    line-height: 1.8em;
 }
+
 
 .recent_title{
     display: flex;
@@ -47,8 +58,9 @@
     justify-content: center;
     font-size: 3em;
     font-weight: 700;
-    line-height: 1em;
-    padding-bottom: 30px; 
+    line-height: 4em;
+    color: #fff;
+    font-family: Lato,sans-serif;
 }
 .recent_list{
     margin: 0px auto;
@@ -56,7 +68,7 @@
     padding: 20px;
     display: flex;
     flex-wrap: wrap; 
-    padding-bottom: 2rem;
+    padding-bottom: 6rem;
    
 }
 .recent_box{
@@ -112,11 +124,21 @@
     width: 100%;
   }
  .post_footer{
-    padding: 2rem 0;
-    background-color: #ffffff;
+    line-height: 4em;
+    padding: 1rem 0;
     border-top: 2px solid #6e6e6e;
+   
+
+
  }  
-  
+.post_share{
+    font-size: 2em;
+}
 
-
-  
+.post_meta{
+    line-height: 4em;
+    border-bottom: 2px solid #6e6e6e;
+}
+.tamanho{
+    line-height: 4em;
+}
