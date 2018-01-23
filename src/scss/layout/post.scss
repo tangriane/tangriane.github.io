@@ -18,6 +18,7 @@
     font-size: 5em;
     font-weight: 900;
     position: fixed;
+    text-align: center;
    
     &:before, &:after {
        
@@ -43,11 +44,11 @@
 .entry_content{
     background: #333b50;
     font-family: 'Raleway', sans-serif;   
-    padding: 95px 274px 0 274px;
+    padding: 95px 254px 0 254px;
     padding-bottom: 3rem;
     color: #fff;
     font-family: Lato,sans-serif;
-    text-transform: uppercase;
+    font-size: 1.3em;
     line-height: 1.8em;
 }
 
@@ -68,8 +69,7 @@
     padding: 20px;
     display: flex;
     flex-wrap: wrap; 
-    padding-bottom: 6rem;
-   
+    box-shadow: 1px 3px 32px 8px #202533;
 }
 .recent_box{
     background-color: #343b50;
@@ -94,10 +94,11 @@
 .recent_image {
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
   }
   .recent_span {
-    white-space: nowrap; 
+ 
     color: white;
     font-size: 20px;
     position: absolute;
@@ -127,18 +128,37 @@
     line-height: 4em;
     padding: 1rem 0;
     border-top: 2px solid #6e6e6e;
-   
-
 
  }  
 .post_share{
     font-size: 2em;
 }
-
 .post_meta{
     line-height: 4em;
     border-bottom: 2px solid #6e6e6e;
 }
 .tamanho{
-    line-height: 4em;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+
+
+.post_share:not(:last-child) {
+    margin-right: 12px;
+}
+
+.post_share a{
+    color: $branco;
+    transition: color .4s;
+    &:hover {
+        color: rgb(112, 114, 117);
+    }
+}
+
+.post_share i {
+    font-size: 1em;
+}
+.post_wrapper{
+    padding-bottom: 1rem;
 }
