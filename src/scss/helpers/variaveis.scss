@@ -6,3 +6,19 @@ $cor-padrao: #333b50;
 $branco: #fff;
 $tam-h1: 3em;
 $tam-h2: 1.2em;
+$breakpoint:(
+    
+    'small': (max-width: 1019px),
+    'medium': (max-width: 1020px),
+    'xsm': (max-width: 992px),
+    'smd': (max-width: 769px),
+    'xs': (max-width: 768px),
+    'xxs': (max-width: 480px),
+    'xxxs': (max-width: 331px),
+
+    'sm': (max-width: 991px),
+    'sm-xs': ((max-width: 769px)and (max-width:991px)),
+    'md': (min-width: 992px),
+    'md-lg':((min-width:992px)and(max-width: 1199px)),
+    'lg': (min-width:1200px)
+);

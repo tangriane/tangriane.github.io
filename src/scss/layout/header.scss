@@ -16,6 +16,9 @@ canvas {
   width: 100%;
   z-index: 9999;
   transition: all 0.8s cubic-bezier(.25, .8, .25, 1) 0s;
+  @include  breakpoint('xxs'){
+    background-color: transparent;
+  }
 }
 
 .header__nav {
@@ -28,6 +31,9 @@ canvas {
   z-index: 9999;
   position: fixed;
   transition: all 0.8s cubic-bezier(.25, .8, .25, 1) 0s;
+  @include breakpoint('xxs'){
+    display: none;
+  }
 }
 
 .logo__header {
@@ -45,6 +51,9 @@ canvas {
   flex-grow: 3;
   align-items: center;
   text-align: start;
+  @include breakpoint('xxs'){
+    display: none;
+  }
 }
 
 .nav__link {
@@ -73,6 +82,10 @@ canvas {
   font-weight: 900;
   font-family: $font-full;
   text-transform: uppercase;
+  @include breakpoint('xxs'){
+    font-size: 3em;
+  }
+
 }
 
 .home__h2 {
@@ -86,6 +99,10 @@ canvas {
 .home__conteudo {
   @extend %flex-direction;
   width: 57%;
+  @include breakpoint('xxs'){
+    width: 100%;
+    margin: 100px;
+  }
 }
 
 .home__span {
@@ -96,4 +113,3 @@ canvas {
 .none {
   display: none;
 }
-

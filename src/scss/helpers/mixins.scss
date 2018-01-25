@@ -8,3 +8,14 @@
     display: flex;
     align-items: center;
 }
+@mixin breakpoint($name){
+    @if map-has-key($breakpoint, $name){
+        @media #{inspect(map-get($breakpoint, $name))}{
+            @content;
+        }
+    }
+    @else {
+        @warn "Não foi possivel entrar um breakpoint com o nome`#{name}`.";
+    
+    }
+    } 

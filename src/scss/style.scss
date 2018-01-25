@@ -10,10 +10,10 @@
 @import 'layout/contact';
 @import 'layout/footer';
 
-/*mobile rodape*/
+/*mobile rodape
 
 @media only screen and (max-device-width:480px) {
-    /*rodape e contato*/
+    /*rodape e contato
     .contact__icons {
         font-size: 2em;
     }
@@ -36,7 +36,7 @@
         font-size: 2.5em;
         line-height: 2em;
     }
-    /***Rodape***/
+    /***Rodape
     .copy {
         font-size: 2em;
         line-height: 2em;
@@ -51,7 +51,7 @@
         width: 90px;
         height: 90px;
     }
-    /**HOME RESPONSIVO**/
+    /**HOME RESPONSIVO*
     .home__h1 {
         font-size: 8em;
     }
@@ -95,7 +95,7 @@
     .header__nav {
         background-color: transparent;
     }
-    /*******Experience********/
+    /*******Experience********
     .exp__h1 {
         font-size: 7em;
     }
@@ -129,14 +129,14 @@
         width: 2rem;
         margin: 0px -14px 0 auto;
     }
-    /*********Portifolio************/
+    /*********Portifolio************
     .portfolio__h1 {
         font-size: 7em;
     }
     .portfolio__h2 {
         font-size: 2.8em;
     }
-    /***********Sobre*******************/
+    /***********Sobre*******************
     .sobre__logo {
         width: 200px;
         height: 200px;
@@ -152,4 +152,4 @@
     .cover {
         border: 1px solid #a9796a;
     }
-}
+}*/
